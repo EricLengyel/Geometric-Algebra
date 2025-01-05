@@ -1,0 +1,3659 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    121964,       3651]
+NotebookOptionsPosition[    111092,       3445]
+NotebookOutlinePosition[    111525,       3462]
+CellTagsIndexPosition[    111482,       3459]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Get", "[", 
+  RowBox[{
+   RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+   "\"\<Packages\\\\ConformalAlgebra2D.wl\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.9447034126676207`*^9, 3.944703430120678*^9}, {
+   3.9447575279080076`*^9, 3.944757530037926*^9}, {3.9447577887980185`*^9, 
+   3.9447577897364893`*^9}, {3.94485338674105*^9, 3.9448533878960667`*^9}, {
+   3.9448536876614194`*^9, 3.944853688517932*^9}, 3.9448788525961843`*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"a7d79b4c-8ac3-49dc-931a-f2ce114ed620"],
+
+Cell[BoxData[
+ RowBox[{"p", ":=", 
+  RowBox[{
+   RowBox[{"px", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "1"}], "]"}]}], "+", 
+   RowBox[{"py", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "2"}], "]"}]}], "+", 
+   RowBox[{"pz", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "3"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.944787641334447*^9, 3.9447876529059086`*^9}, 
+   3.944879917291102*^9, {3.944880290881183*^9, 3.9448802969495854`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"bd61b23e-b47f-46f0-bb3f-56c48aa7a131"],
+
+Cell[BoxData[
+ RowBox[{"q", ":=", 
+  RowBox[{
+   RowBox[{"qx", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "1"}], "]"}]}], "+", 
+   RowBox[{"qy", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "2"}], "]"}]}], "+", 
+   RowBox[{"qz", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "3"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.9447876577157617`*^9, 3.94478766158508*^9}, 
+   3.944879931833875*^9, {3.944880299608512*^9, 3.9448803049266167`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"fb8495f8-a6b0-44aa-864c-890354895ce4"],
+
+Cell[BoxData[
+ RowBox[{"g", ":=", 
+  RowBox[{
+   RowBox[{"gx", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "2", ",", "3"}], "]"}]}], "+", 
+   RowBox[{"gy", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "3", ",", "1"}], "]"}]}], "+", 
+   RowBox[{"gz", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "1", ",", "2"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.9447876112669377`*^9, 3.9447876265718803`*^9}, 
+   3.944879959503539*^9},
+ CellLabel->"In[4]:=",ExpressionUUID->"bd1c64b0-a7c3-4895-bab2-8001fd704f29"],
+
+Cell[BoxData[
+ RowBox[{"h", ":=", 
+  RowBox[{
+   RowBox[{"hx", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "2", ",", "3"}], "]"}]}], "+", 
+   RowBox[{"hy", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "3", ",", "1"}], "]"}]}], "+", 
+   RowBox[{"hz", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "1", ",", "2"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.9447876309113855`*^9, 3.94478763600062*^9}, {
+  3.9448799620374374`*^9, 3.9448799668987637`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"2706d749-162f-4dbf-882d-d41e26ae5cd0"],
+
+Cell[BoxData[
+ RowBox[{"a", ":=", 
+  RowBox[{
+   RowBox[{"ax", " ", 
+    RowBox[{"e", "[", "1", "]"}]}], "+", 
+   RowBox[{"ay", " ", 
+    RowBox[{"e", "[", "2", "]"}]}], "+", 
+   RowBox[{"az", " ", 
+    RowBox[{"e", "[", "3", "]"}]}], "+", 
+   RowBox[{"aw", " ", 
+    RowBox[{"e", "[", "4", "]"}]}]}]}]], "Input",
+ CellChangeTimes->{3.8960562948988447`*^9},
+ CellLabel->"In[6]:=",ExpressionUUID->"1c217c93-e00d-49da-9ccc-891327dfdcfb"],
+
+Cell[BoxData[
+ RowBox[{"b", ":=", 
+  RowBox[{
+   RowBox[{"bx", " ", 
+    RowBox[{"e", "[", "1", "]"}]}], "+", 
+   RowBox[{"by", " ", 
+    RowBox[{"e", "[", "2", "]"}]}], "+", 
+   RowBox[{"bz", " ", 
+    RowBox[{"e", "[", "3", "]"}]}], "+", 
+   RowBox[{"bw", " ", 
+    RowBox[{"e", "[", "4", "]"}]}]}]}]], "Input",
+ CellChangeTimes->{3.896056296148839*^9},
+ CellLabel->"In[7]:=",ExpressionUUID->"c1552c83-0403-49e7-83c5-818b454101e9"],
+
+Cell[BoxData[
+ RowBox[{"d", ":=", 
+  RowBox[{
+   RowBox[{"dgx", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"2", ",", "3"}], "]"}]}], "+", 
+   RowBox[{"dgy", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"3", ",", "1"}], "]"}]}], "+", 
+   RowBox[{"dgz", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"1", ",", "2"}], "]"}]}], "+", 
+   RowBox[{"dpx", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "1"}], "]"}]}], "+", 
+   RowBox[{"dpy", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "2"}], "]"}]}], "+", 
+   RowBox[{"dpz", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "3"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.896057759761344*^9, 3.8960578029414988`*^9}, {
+  3.8960578562566137`*^9, 3.896057866006611*^9}, {3.896126405023614*^9, 
+  3.89612641114989*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"1aecaf2f-813b-443c-98a9-78a1a2a727b6"],
+
+Cell[BoxData[
+ RowBox[{"f", ":=", 
+  RowBox[{
+   RowBox[{"fgx", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"2", ",", "3"}], "]"}]}], "+", 
+   RowBox[{"fgy", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"3", ",", "1"}], "]"}]}], "+", 
+   RowBox[{"fgz", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"1", ",", "2"}], "]"}]}], "+", 
+   RowBox[{"fpx", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "1"}], "]"}]}], "+", 
+   RowBox[{"fpy", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "2"}], "]"}]}], "+", 
+   RowBox[{"fpz", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "3"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.8963858223547187`*^9, 3.896385829141938*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"44c53bd9-6065-4a73-8e37-4e9ae755cb4e"],
+
+Cell[BoxData[
+ RowBox[{"c", ":=", 
+  RowBox[{
+   RowBox[{"cx", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "2", ",", "3"}], "]"}]}], "+", 
+   RowBox[{"cy", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "3", ",", "1"}], "]"}]}], "+", 
+   RowBox[{"cz", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "1", ",", "2"}], "]"}]}], "+", 
+   RowBox[{"cw", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"3", ",", "2", ",", "1"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.8960573079074383`*^9, 3.896057375800887*^9}, {
+  3.896057882634322*^9, 3.8960578858373976`*^9}, {3.8961269779540486`*^9, 
+  3.896126987813429*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"8fdfe2a2-d205-42a9-94e1-6e227c7925e4"],
+
+Cell[BoxData[
+ RowBox[{"o", ":=", 
+  RowBox[{
+   RowBox[{"ox", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "2", ",", "3"}], "]"}]}], "+", 
+   RowBox[{"oy", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "3", ",", "1"}], "]"}]}], "+", 
+   RowBox[{"oz", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"4", ",", "1", ",", "2"}], "]"}]}], "+", 
+   RowBox[{"ow", " ", 
+    RowBox[{"e", "[", 
+     RowBox[{"3", ",", "2", ",", "1"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.8960662026255674`*^9, 3.896066209141199*^9}, {
+  3.8961269906727905`*^9, 3.896127000175517*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"db1b92dc-2e10-46a1-990c-c357f0eb1ea8"],
+
+Cell[CellGroupData[{
+
+Cell["Join and Meet", "Section",
+ CellChangeTimes->{{3.944789783015143*^9, 
+  3.9447897847444267`*^9}},ExpressionUUID->"a0ceac80-4dd7-4a0f-831c-\
+3dfa5e4432fe"],
+
+Cell[CellGroupData[{
+
+Cell["Join of two round points", "Subsection",
+ CellChangeTimes->{{3.9448811767385745`*^9, 
+  3.9448811772989497`*^9}},ExpressionUUID->"3358283d-aee9-4dc1-a034-\
+b80bbaa1c137"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "\[And]", "b"}], "//", "BasisForm"}]], "Input",
+ CellChangeTimes->{{3.944880581658284*^9, 3.944880584224546*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"27f6f709-1317-4713-b15d-bf30beaba4fd"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"12\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"ax", " ", "by"}], "-", 
+      RowBox[{"ay", " ", "bx"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"23\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"ay", " ", "bz"}], "-", 
+      RowBox[{"az", " ", "by"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"31\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"az", " ", "bx"}], "-", 
+      RowBox[{"ax", " ", "bz"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"41\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"aw", " ", "bx"}], "-", 
+      RowBox[{"ax", " ", "bw"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"42\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"aw", " ", "by"}], "-", 
+      RowBox[{"ay", " ", "bw"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"43\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"aw", " ", "bz"}], "-", 
+      RowBox[{"az", " ", "bw"}]}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.944880584664254*^9, 3.944883457314213*^9, 
+  3.9449608746925526`*^9},
+ CellLabel->
+  "Out[12]//TraditionalForm=",ExpressionUUID->"e55e8479-7be0-4193-93f1-\
+6aa1175c3fcb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"p1", "=", 
+        RowBox[{"RoundPoint", "[", 
+         RowBox[{"0", ",", "0", ",", "1", ",", "1.5"}], "]"}]}], ",", 
+       RowBox[{"p2", "=", 
+        RowBox[{"RoundPoint", "[", 
+         RowBox[{"x", ",", "0", ",", "1", ",", "r"}], "]"}]}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Show", "[", 
+      RowBox[{
+       RowBox[{"DrawRoundPoint", "[", "p1", "]"}], ",", 
+       RowBox[{"DrawRoundPoint", "[", "p2", "]"}], ",", 
+       RowBox[{"DrawDipole", "[", 
+        RowBox[{"p1", "\[And]", "p2"}], "]"}], ",", 
+       RowBox[{"DrawCircle", "[", 
+        RowBox[{"Container", "[", 
+         RowBox[{"p1", "\[And]", "p2"}], "]"}], "]"}], ",", 
+       RowBox[{"PlotRange", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "2"}], ",", "7"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "4"}], ",", "4"}], "}"}]}], "}"}]}]}], "]"}]}], 
+    "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "4"}], "}"}], ",", "0.1", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"r", ",", "1"}], "}"}], ",", "0", ",", "3"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8961413245077195`*^9, 3.8961413662800503`*^9}, {
+   3.8961420086290665`*^9, 3.8961420116950417`*^9}, {3.896142045397687*^9, 
+   3.8961420468677244`*^9}, {3.896142089858036*^9, 3.896142115336766*^9}, 
+   3.896143807146099*^9, {3.9448805965498905`*^9, 3.944880599746258*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"32398640-7b3b-47cf-a331-6a725142e3e3"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`r$$ = 1, $CellContext`x$$ = 4, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`x$$], 4}, 0.1, 5}, {{
+       Hold[$CellContext`r$$], 1}, 0, 3}}, Typeset`size$$ = {
+    360., {158., 162.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`r$$ = 1, $CellContext`x$$ = 4}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      With[{$CellContext`p1 = 
+         ConformalAlgebra2D`RoundPoint[0, 0, 1, 1.5], $CellContext`p2 = 
+         ConformalAlgebra2D`RoundPoint[$CellContext`x$$, 0, 
+           1, $CellContext`r$$]}, 
+        Show[
+         ConformalAlgebra2D`DrawRoundPoint[$CellContext`p1], 
+         ConformalAlgebra2D`DrawRoundPoint[$CellContext`p2], 
+         ConformalAlgebra2D`DrawDipole[
+          ConformalAlgebra2D`WedgeProduct[$CellContext`p1, $CellContext`p2]], 
+         ConformalAlgebra2D`DrawCircle[
+          ConformalAlgebra2D`Container[
+           
+           ConformalAlgebra2D`WedgeProduct[$CellContext`p1, \
+$CellContext`p2]]], PlotRange -> {{-2, 7}, {-4, 4}}]], 
+      "Specifications" :> {{{$CellContext`x$$, 4}, 0.1, 
+         5}, {{$CellContext`r$$, 1}, 0, 3}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{408., {213.134033203125, 218.865966796875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.944880602990495*^9, 3.9448834573442173`*^9, 
+  3.944960874713557*^9},
+ CellLabel->"Out[13]=",ExpressionUUID->"5e8f7b92-314a-4e97-931d-2b0eb3bf8217"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Join of flat point and round point", "Subsection",ExpressionUUID->"a785b031-7e8b-4119-be74-f064dc6b4a5a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p", "\[And]", "a"}], "//", "BasisForm"}]], "Input",
+ CellChangeTimes->{{3.9448806910204854`*^9, 3.94488069221509*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"90e48e29-954d-450f-8ed3-76aefd287668"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"412\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"ay", " ", "px"}], "-", 
+      RowBox[{"ax", " ", "py"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"423\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"az", " ", "py"}], "-", 
+      RowBox[{"ay", " ", "pz"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"431\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"ax", " ", "pz"}], "-", 
+      RowBox[{"az", " ", "px"}]}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.944880692687191*^9, 3.9448834574732637`*^9, 
+  3.9449608748271275`*^9},
+ CellLabel->
+  "Out[14]//TraditionalForm=",ExpressionUUID->"b15ae2e7-fc92-49b6-bf49-\
+a95e1872c822"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Join of dipole and round point", "Subsection",
+ CellChangeTimes->{{3.944881170548786*^9, 
+  3.9448811711384096`*^9}},ExpressionUUID->"b97c827c-01f1-4d0c-8002-\
+c559213a185b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"d", "\[And]", "a"}], "//", "BasisForm"}]], "Input",
+ CellChangeTimes->{3.9448807020452995`*^9},
+ CellLabel->"In[15]:=",ExpressionUUID->"a75f6c4c-5869-468f-8a2a-1fd06646206a"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"321\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"ax", " ", "dgx"}]}], "-", 
+      RowBox[{"ay", " ", "dgy"}], "-", 
+      RowBox[{"az", " ", "dgz"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"412\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"aw", " ", "dgz"}], "-", 
+      RowBox[{"ax", " ", "dpy"}], "+", 
+      RowBox[{"ay", " ", "dpx"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"423\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"aw", " ", "dgx"}], "-", 
+      RowBox[{"ay", " ", "dpz"}], "+", 
+      RowBox[{"az", " ", "dpy"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"431\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"aw", " ", "dgy"}], "+", 
+      RowBox[{"ax", " ", "dpz"}], "-", 
+      RowBox[{"az", " ", "dpx"}]}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.9448807022402616`*^9, 3.9448834574917736`*^9, 
+  3.9449608748421893`*^9},
+ CellLabel->
+  "Out[15]//TraditionalForm=",ExpressionUUID->"5d636c4f-0bc0-4b99-9dc1-\
+639bb843297d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"p1", "=", 
+        RowBox[{"RoundPoint", "[", 
+         RowBox[{"0", ",", "0", ",", "1", ",", "1"}], "]"}]}], ",", 
+       RowBox[{"p2", "=", 
+        RowBox[{"RoundPoint", "[", 
+         RowBox[{"4", ",", "0", ",", "1", ",", "3"}], "]"}]}], ",", 
+       RowBox[{"p3", "=", 
+        RowBox[{"RoundPoint", "[", 
+         RowBox[{"2", ",", "y", ",", "1", ",", 
+          RowBox[{"-", "r"}]}], "]"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Show", "[", 
+      RowBox[{
+       RowBox[{"DrawRoundPoint", "[", "p1", "]"}], ",", 
+       RowBox[{"DrawRoundPoint", "[", "p2", "]"}], ",", 
+       RowBox[{"DrawRoundPoint", "[", "p3", "]"}], ",", 
+       RowBox[{"DrawDipole", "[", 
+        RowBox[{"p1", "\[And]", "p2"}], "]"}], ",", 
+       RowBox[{"DrawDipole", "[", 
+        RowBox[{"p2", "\[And]", "p3"}], "]"}], ",", 
+       RowBox[{"DrawDipole", "[", 
+        RowBox[{"p3", "\[And]", "p1"}], "]"}], ",", 
+       RowBox[{"DrawCircle", "[", 
+        RowBox[{"p1", "\[And]", "p2", "\[And]", "p3"}], "]"}], ",", 
+       RowBox[{"PlotRange", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "2"}], ",", "8"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "3"}], ",", "6"}], "}"}]}], "}"}]}]}], "]"}]}], 
+    "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"y", ",", "4"}], "}"}], ",", "0.1", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"r", ",", "1"}], "}"}], ",", "0", ",", "3"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.896143752990591*^9, 3.8961438258662605`*^9}, {
+  3.944880711026058*^9, 3.9448807148036904`*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"ce43ceab-de9b-4b7f-9bdb-b525a90e5c10"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`r$$ = 1, $CellContext`y$$ = 4, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`y$$], 4}, 0.1, 5}, {{
+       Hold[$CellContext`r$$], 1}, 0, 3}}, Typeset`size$$ = {
+    360., {160., 164.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`r$$ = 1, $CellContext`y$$ = 4}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      With[{$CellContext`p1 = 
+         ConformalAlgebra2D`RoundPoint[0, 0, 1, 1], $CellContext`p2 = 
+         ConformalAlgebra2D`RoundPoint[4, 0, 1, 3], $CellContext`p3 = 
+         ConformalAlgebra2D`RoundPoint[
+          2, $CellContext`y$$, 1, -$CellContext`r$$]}, 
+        Show[
+         ConformalAlgebra2D`DrawRoundPoint[$CellContext`p1], 
+         ConformalAlgebra2D`DrawRoundPoint[$CellContext`p2], 
+         ConformalAlgebra2D`DrawRoundPoint[$CellContext`p3], 
+         ConformalAlgebra2D`DrawDipole[
+          ConformalAlgebra2D`WedgeProduct[$CellContext`p1, $CellContext`p2]], 
+         ConformalAlgebra2D`DrawDipole[
+          ConformalAlgebra2D`WedgeProduct[$CellContext`p2, $CellContext`p3]], 
+         ConformalAlgebra2D`DrawDipole[
+          ConformalAlgebra2D`WedgeProduct[$CellContext`p3, $CellContext`p1]], 
+         ConformalAlgebra2D`DrawCircle[
+          ConformalAlgebra2D`WedgeProduct[
+           
+           ConformalAlgebra2D`WedgeProduct[$CellContext`p1, $CellContext`p2], \
+$CellContext`p3]], PlotRange -> {{-2, 8}, {-3, 6}}]], 
+      "Specifications" :> {{{$CellContext`y$$, 4}, 0.1, 
+         5}, {{$CellContext`r$$, 1}, 0, 3}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{408., {215.134033203125, 220.865966796875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.9448807153350697`*^9, 3.944883457511786*^9, 
+  3.944960874857054*^9},
+ CellLabel->"Out[16]=",ExpressionUUID->"caf05023-2471-4d57-be73-a5d68c780147"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Meet of two lines", "Subsection",
+ CellChangeTimes->{{3.8960660770087795`*^9, 
+  3.896066077555603*^9}},ExpressionUUID->"c6bfc9f6-0d78-4a79-8981-\
+70fdfe15be61"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "\[Or]", "h"}], "//", "BasisForm"}]], "Input",
+ CellChangeTimes->{{3.944880728070736*^9, 3.944880729397973*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"8a8be443-e577-4bab-aec7-94e03d9e3df2"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"41\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"gz", " ", "hy"}], "-", 
+      RowBox[{"gy", " ", "hz"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"42\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"gx", " ", "hz"}], "-", 
+      RowBox[{"gz", " ", "hx"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"43\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"gy", " ", "hx"}], "-", 
+      RowBox[{"gx", " ", "hy"}]}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.9448807298939085`*^9, 3.944883457564342*^9, 
+  3.944960874900076*^9},
+ CellLabel->
+  "Out[17]//TraditionalForm=",ExpressionUUID->"df504fa1-0fad-429a-b8ec-\
+fe85eab61e69"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Meet of two circles", "Subsection",
+ CellChangeTimes->{{3.896066179639785*^9, 
+  3.8960661808741074`*^9}},ExpressionUUID->"7eb19fa9-0524-4706-b62d-\
+eb8eae2a26e5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"c", "\[Or]", "o"}], "//", "BasisForm"}]], "Input",
+ CellChangeTimes->{{3.896066183108533*^9, 3.8960661846397843`*^9}, 
+   3.944880737274969*^9},
+ CellLabel->"In[18]:=",ExpressionUUID->"dcc40222-ade1-478b-bcf5-c6c0e2309685"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"12\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"cz", " ", "ow"}], "-", 
+      RowBox[{"cw", " ", "oz"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"23\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"cx", " ", "ow"}], "-", 
+      RowBox[{"cw", " ", "ox"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"31\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"cy", " ", "ow"}], "-", 
+      RowBox[{"cw", " ", "oy"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"41\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"cz", " ", "oy"}], "-", 
+      RowBox[{"cy", " ", "oz"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"42\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"cx", " ", "oz"}], "-", 
+      RowBox[{"cz", " ", "ox"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"43\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"cy", " ", "ox"}], "-", 
+      RowBox[{"cx", " ", "oy"}]}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.9448807374630923`*^9, 3.9448834575831327`*^9, 
+  3.944960874912675*^9},
+ CellLabel->
+  "Out[18]//TraditionalForm=",ExpressionUUID->"1a9479ab-6b06-4d8d-9663-\
+80c38e76aaa8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"r1", "=", "4"}], ",", 
+       RowBox[{"r2", "=", "1"}], ",", "c1", ",", "c2"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"c1", "=", 
+       RowBox[{"RoundCircle", "[", 
+        RowBox[{"r1", ",", 
+         RowBox[{"-", "1"}], ",", "0"}], "]"}]}], ";", 
+      RowBox[{"c2", "=", 
+       RowBox[{"RoundCircle", "[", 
+        RowBox[{"r2", ",", "x", ",", "0"}], "]"}]}], ";", 
+      RowBox[{"Show", "[", 
+       RowBox[{
+        RowBox[{"DrawCircle", "[", "c1", "]"}], ",", 
+        RowBox[{"DrawCircle", "[", "c2", "]"}], ",", 
+        RowBox[{"DrawDipole", "[", 
+         RowBox[{"c1", "\[Or]", "c2"}], "]"}], ",", 
+        RowBox[{"PlotRange", "->", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "4"}], ",", "4"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "4"}], ",", "4"}], "}"}]}], "}"}]}]}], "]"}]}]}], 
+    "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "1"}], "}"}], ",", 
+     RowBox[{"-", "4"}], ",", "4"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.896143971298962*^9, 3.8961440370120645`*^9}, {
+  3.896144125922274*^9, 3.896144131141021*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"c2fb787f-032d-4d5d-81bd-cfec1862c1a8"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`x$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`x$$], 1}, -4, 4}}, Typeset`size$$ = {
+    360., {178., 182.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`x$$ = 1}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`r1$ = 4, $CellContext`r2$ = 
+         1, $CellContext`c1$, $CellContext`c2$}, $CellContext`c1$ = 
+         ConformalAlgebra2D`RoundCircle[$CellContext`r1$, -1, 
+           0]; $CellContext`c2$ = 
+         ConformalAlgebra2D`RoundCircle[$CellContext`r2$, $CellContext`x$$, 
+           0]; Show[
+          ConformalAlgebra2D`DrawCircle[$CellContext`c1$], 
+          ConformalAlgebra2D`DrawCircle[$CellContext`c2$], 
+          ConformalAlgebra2D`DrawDipole[
+           
+           ConformalAlgebra2D`AntiwedgeProduct[$CellContext`c1$, \
+$CellContext`c2$]], PlotRange -> {{-4, 4}, {-4, 4}}]], 
+      "Specifications" :> {{{$CellContext`x$$, 1}, -4, 4}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{408., {221.134033203125, 226.865966796875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.9448807449914927`*^9, 3.944883457603147*^9, 
+  3.94496087492668*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"a9f367d2-1346-4628-b131-336e9e637087"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Meet of circle and line", "Subsection",
+ CellChangeTimes->{{3.8960662318169384`*^9, 
+  3.896066234520069*^9}},ExpressionUUID->"b6d7e7a2-ec6f-4054-8f7a-\
+a360c69a5aef"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"c", "\[Or]", "g"}], "//", "BasisForm"}]], "Input",
+ CellChangeTimes->{
+  3.8960662370513077`*^9, {3.9448807597985897`*^9, 3.944880760853673*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"435b7116-67b3-4c98-832d-1ac5a36fa281"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"-", 
+    RowBox[{"cw", " ", "gz", " ", 
+     FormBox[
+      TagBox[
+       SubscriptBox[
+        StyleBox["\<\"e\"\>",
+         StripOnInput->False,
+         FontFamily->"Times New Roman",
+         FontSize->16,
+         FontWeight->Bold], 
+        StyleBox["\<\"12\"\>",
+         StripOnInput->False,
+         FontFamily->"Times New Roman",
+         FontSize->9]],
+       DisplayForm],
+      TraditionalForm]}]}], "-", 
+   RowBox[{"cw", " ", "gx", " ", 
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"23\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm]}], "-", 
+   RowBox[{"cw", " ", "gy", " ", 
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"31\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"41\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"cz", " ", "gy"}], "-", 
+      RowBox[{"cy", " ", "gz"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"42\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"cx", " ", "gz"}], "-", 
+      RowBox[{"cz", " ", "gx"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"43\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"cy", " ", "gx"}], "-", 
+      RowBox[{"cx", " ", "gy"}]}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.9448807613237853`*^9, 3.94488345765923*^9, 
+  3.9449608749757676`*^9},
+ CellLabel->
+  "Out[20]//TraditionalForm=",ExpressionUUID->"84b093e5-b2e0-447e-a29e-\
+853b6509c8b2"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Meet of circle and dipole", "Subsection",
+ CellChangeTimes->{{3.8960662820922604`*^9, 
+  3.8960662827172613`*^9}},ExpressionUUID->"d794ebf4-2d8d-4a5c-9e52-\
+4cfc2d8369ea"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"c", "\[Or]", "d"}], "//", "BasisForm"}]], "Input",
+ CellChangeTimes->{3.89606628443596*^9, 3.944880769083646*^9},
+ CellLabel->"In[21]:=",ExpressionUUID->"46f1c70a-111a-4a73-bed3-9b40ddb610c3"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"1\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"cw", " ", "dpx"}], "-", 
+      RowBox[{"cy", " ", "dgz"}], "+", 
+      RowBox[{"cz", " ", "dgy"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"2\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"cw", " ", "dpy"}], "+", 
+      RowBox[{"cx", " ", "dgz"}], "-", 
+      RowBox[{"cz", " ", "dgx"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"3\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"cw", " ", "dpz"}], "-", 
+      RowBox[{"cx", " ", "dgy"}], "+", 
+      RowBox[{"cy", " ", "dgx"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"4\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"cx", " ", "dpx"}]}], "-", 
+      RowBox[{"cy", " ", "dpy"}], "-", 
+      RowBox[{"cz", " ", "dpz"}]}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.94488076950388*^9, 3.9448834576777525`*^9, 
+  3.9449608749948125`*^9},
+ CellLabel->
+  "Out[21]//TraditionalForm=",ExpressionUUID->"4a5aa667-d405-458b-9014-\
+edd5e3698393"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"dip", "=", 
+        RowBox[{"RoundDipole", "[", 
+         RowBox[{"r", ",", "0", ",", "y", ",", "1", ",", "0"}], "]"}]}], ",", 
+       RowBox[{"cir", "=", 
+        RowBox[{"RoundCircle", "[", 
+         RowBox[{"2", ",", "0", ",", 
+          RowBox[{"-", "1"}]}], "]"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Show", "[", 
+      RowBox[{
+       RowBox[{"DrawCircle", "[", "cir", "]"}], ",", 
+       RowBox[{"DrawDipole", "[", "dip", "]"}], ",", 
+       RowBox[{"DrawRoundPoint", "[", 
+        RowBox[{"dip", "\[Or]", "cir"}], "]"}], ",", 
+       RowBox[{"DrawCircle", "[", 
+        RowBox[{"Container", "[", "dip", "]"}], "]"}], ",", 
+       RowBox[{"PlotRange", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "}"}]}]}], "]"}]}], 
+    "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"y", ",", "1"}], "}"}], ",", 
+     RowBox[{"-", "0.9"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"r", ",", "1"}], "}"}], ",", "0", ",", "3"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8961442141165934`*^9, 3.8961442975911255`*^9}, {
+   3.8961443603487062`*^9, 3.8961444568774185`*^9}, 3.8961444989555826`*^9, {
+   3.94488077560899*^9, 3.9448807913228693`*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"a6238703-a7cf-4b4d-882e-92731c4e11fe"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`r$$ = 1, $CellContext`y$$ = 1, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`y$$], 1}, -0.9, 3}, {{
+       Hold[$CellContext`r$$], 1}, 0, 3}}, Typeset`size$$ = {
+    360., {178., 182.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`r$$ = 1, $CellContext`y$$ = 1}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      With[{$CellContext`dip = 
+         ConformalAlgebra2D`RoundDipole[$CellContext`r$$, 0, $CellContext`y$$,
+            1, 0], $CellContext`cir = 
+         ConformalAlgebra2D`RoundCircle[2, 0, -1]}, 
+        Show[
+         ConformalAlgebra2D`DrawCircle[$CellContext`cir], 
+         ConformalAlgebra2D`DrawDipole[$CellContext`dip], 
+         ConformalAlgebra2D`DrawRoundPoint[
+          
+          ConformalAlgebra2D`AntiwedgeProduct[$CellContext`dip, \
+$CellContext`cir]], 
+         ConformalAlgebra2D`DrawCircle[
+          ConformalAlgebra2D`Container[$CellContext`dip]], 
+         PlotRange -> {{-3, 3}, {-3, 3}}]], 
+      "Specifications" :> {{{$CellContext`y$$, 1}, -0.9, 
+         3}, {{$CellContext`r$$, 1}, 0, 3}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{408., {233.134033203125, 238.865966796875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.9448807765993347`*^9, 3.9448807944124193`*^9}, 
+   3.9448834576992645`*^9, 3.9449608750081396`*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"8772131a-02b3-4580-9f6c-39786f8ff0bf"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Meet of line and dipole", "Subsection",ExpressionUUID->"675734da-b1f1-4a33-88b7-7a4fcf81575e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "\[Or]", "d"}], "//", "BasisForm"}]], "Input",
+ CellChangeTimes->{{3.9448808245471225`*^9, 3.944880825593039*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"1f3dcda9-085a-4ce2-820d-042d2484eb1d"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"1\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"dgy", " ", "gz"}], "-", 
+      RowBox[{"dgz", " ", "gy"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"2\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"dgz", " ", "gx"}], "-", 
+      RowBox[{"dgx", " ", "gz"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"3\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"dgx", " ", "gy"}], "-", 
+      RowBox[{"dgy", " ", "gx"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"4\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"dpx", " ", "gx"}]}], "-", 
+      RowBox[{"dpy", " ", "gy"}], "-", 
+      RowBox[{"dpz", " ", "gz"}]}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.94488082607191*^9, 3.9448834577618227`*^9, 
+  3.944960875065673*^9},
+ CellLabel->
+  "Out[23]//TraditionalForm=",ExpressionUUID->"5fd473a2-cd55-420e-aad4-\
+76150f6f681d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"dip", "=", 
+        RowBox[{"RoundDipole", "[", 
+         RowBox[{"r", ",", "0", ",", "y", ",", "1", ",", "0"}], "]"}]}], ",", 
+       RowBox[{"cir", "=", 
+        RowBox[{"FlatLine", "[", 
+         RowBox[{"0", ",", "1", ",", "1"}], "]"}]}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Show", "[", 
+      RowBox[{
+       RowBox[{"DrawLine", "[", "cir", "]"}], ",", 
+       RowBox[{"DrawDipole", "[", "dip", "]"}], ",", 
+       RowBox[{"DrawRoundPoint", "[", 
+        RowBox[{"dip", "\[Or]", "cir"}], "]"}], ",", 
+       RowBox[{"PlotRange", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "}"}]}]}], "]"}]}], 
+    "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"y", ",", "1"}], "}"}], ",", 
+     RowBox[{"-", "0.9"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"r", ",", "1"}], "}"}], ",", "0", ",", "3"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.9448808344005404`*^9, 3.944880838339594*^9}, {
+  3.944880931828574*^9, 3.944880935898972*^9}, {3.9448809752671394`*^9, 
+  3.944880979321853*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"40ca9f1a-8374-48b0-b58a-10fa9a40cd9e"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`r$$ = 1, $CellContext`y$$ = 1, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`y$$], 1}, -0.9, 3}, {{
+       Hold[$CellContext`r$$], 1}, 0, 3}}, Typeset`size$$ = {
+    360., {178., 182.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`r$$ = 1, $CellContext`y$$ = 1}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      With[{$CellContext`dip = 
+         ConformalAlgebra2D`RoundDipole[$CellContext`r$$, 0, $CellContext`y$$,
+            1, 0], $CellContext`cir = ConformalAlgebra2D`FlatLine[0, 1, 1]}, 
+        Show[
+         ConformalAlgebra2D`DrawLine[$CellContext`cir], 
+         ConformalAlgebra2D`DrawDipole[$CellContext`dip], 
+         ConformalAlgebra2D`DrawRoundPoint[
+          
+          ConformalAlgebra2D`AntiwedgeProduct[$CellContext`dip, \
+$CellContext`cir]], PlotRange -> {{-3, 3}, {-3, 3}}]], 
+      "Specifications" :> {{{$CellContext`y$$, 1}, -0.9, 
+         3}, {{$CellContext`r$$, 1}, 0, 3}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{408., {233.134033203125, 238.865966796875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.944880841577875*^9, {3.9448809758892384`*^9, 3.944880980641079*^9}, 
+   3.9448810749996634`*^9, 3.944883457782833*^9, 3.94496087507769*^9},
+ CellLabel->"Out[24]=",ExpressionUUID->"6acf72c7-b119-4cc2-97d6-39eea7795c95"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Meet of circle and flat point", "Subsection",
+ CellChangeTimes->{{3.8960663002342253`*^9, 3.896066300812402*^9}, {
+  3.9448811142439594`*^9, 
+  3.9448811146970105`*^9}},ExpressionUUID->"6a813dc5-da7c-4ae4-a58e-\
+4d78285e2870"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"c", "\[Or]", "p"}], "//", "BasisForm"}]], "Input",
+ CellChangeTimes->{3.8960663045780106`*^9, 3.9448810945755043`*^9},
+ CellLabel->"In[25]:=",ExpressionUUID->"0a872a7a-a5cc-4e83-bd2e-ba95196aad97"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"cw", " ", "px", " ", 
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"1\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm]}], "+", 
+   RowBox[{"cw", " ", "py", " ", 
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"2\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm]}], "+", 
+   RowBox[{"cw", " ", "pz", " ", 
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"3\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"4\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"cx", " ", "px"}]}], "-", 
+      RowBox[{"cy", " ", "py"}], "-", 
+      RowBox[{"cz", " ", "pz"}]}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.944881094917706*^9, 3.9448834578248577`*^9, 
+  3.9449608751107173`*^9},
+ CellLabel->
+  "Out[25]//TraditionalForm=",ExpressionUUID->"3ba0940a-97e9-499d-b5a5-\
+3230d1e13544"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"dip", "=", 
+        RowBox[{"FlatPoint", "[", 
+         RowBox[{"0", ",", "y"}], "]"}]}], ",", 
+       RowBox[{"cir", "=", 
+        RowBox[{"RoundCircle", "[", 
+         RowBox[{"r", ",", "0", ",", "1"}], "]"}]}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Show", "[", 
+      RowBox[{
+       RowBox[{"DrawCircle", "[", "cir", "]"}], ",", 
+       RowBox[{"DrawFlatPoint", "[", "dip", "]"}], ",", 
+       RowBox[{"DrawRoundPoint", "[", 
+        RowBox[{"dip", "\[Or]", "cir"}], "]"}], ",", 
+       RowBox[{"PlotRange", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "}"}]}]}], "]"}]}], 
+    "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"y", ",", "2"}], "}"}], ",", "0.1", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"r", ",", "1"}], "}"}], ",", "0", ",", "4"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8961446163279715`*^9, 3.8961446616120014`*^9}, {
+  3.9448811019191227`*^9, 3.9448811024887843`*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"37d71877-ba59-4938-91d5-e631e18bd9d9"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`r$$ = 1, $CellContext`y$$ = 2, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`y$$], 2}, 0.1, 5}, {{
+       Hold[$CellContext`r$$], 1}, 0, 4}}, Typeset`size$$ = {
+    360., {178., 182.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`r$$ = 1, $CellContext`y$$ = 2}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      With[{$CellContext`dip = 
+         ConformalAlgebra2D`FlatPoint[0, $CellContext`y$$], $CellContext`cir = 
+         ConformalAlgebra2D`RoundCircle[$CellContext`r$$, 0, 1]}, 
+        Show[
+         ConformalAlgebra2D`DrawCircle[$CellContext`cir], 
+         ConformalAlgebra2D`DrawFlatPoint[$CellContext`dip], 
+         ConformalAlgebra2D`DrawRoundPoint[
+          
+          ConformalAlgebra2D`AntiwedgeProduct[$CellContext`dip, \
+$CellContext`cir]], PlotRange -> {{-3, 3}, {-3, 3}}]], 
+      "Specifications" :> {{{$CellContext`y$$, 2}, 0.1, 
+         5}, {{$CellContext`r$$, 1}, 0, 4}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{408., {233.134033203125, 238.865966796875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.944881107139335*^9, 3.9448834578458796`*^9, 
+  3.9449608751212287`*^9},
+ CellLabel->"Out[26]=",ExpressionUUID->"a125df10-77f2-44c7-a454-fef4f790b322"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Expansion", "Section",
+ CellChangeTimes->{{3.9448811504448366`*^9, 
+  3.9448811518437114`*^9}},ExpressionUUID->"98f34c2f-b8f5-4387-a36a-\
+d68a0724bf6b"],
+
+Cell[CellGroupData[{
+
+Cell["Expand round point onto circle", "Subsection",
+ CellChangeTimes->{{3.896066414803187*^9, 3.896066415740738*^9}, {
+  3.944881226168373*^9, 
+  3.944881229039959*^9}},ExpressionUUID->"1f9c291a-0460-477e-883a-\
+8cc5631b5b59"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "\[And]", 
+   RowBox[{"Antidual", "[", "c", "]"}]}], "//", "BasisForm"}]], "Input",
+ CellChangeTimes->{{3.944881184225999*^9, 3.9448811853208075`*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"2b783acf-9497-4d45-8761-f3c0db3cb2a0"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"12\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"ay", " ", "cx"}], "-", 
+      RowBox[{"ax", " ", "cy"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"23\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"ay", " ", "cw"}], "+", 
+      RowBox[{"az", " ", "cy"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"31\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"ax", " ", "cw"}]}], "-", 
+      RowBox[{"az", " ", "cx"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"41\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"aw", " ", "cx"}]}], "-", 
+      RowBox[{"ax", " ", "cz"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"42\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"aw", " ", "cy"}]}], "-", 
+      RowBox[{"ay", " ", "cz"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"43\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"aw", " ", "cw"}], "-", 
+      RowBox[{"az", " ", "cz"}]}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.9448811858186684`*^9, 3.9448834579484587`*^9, 
+  3.9449608751717668`*^9},
+ CellLabel->
+  "Out[27]//TraditionalForm=",ExpressionUUID->"b5856c9a-c0be-4632-9f97-\
+5777617fb31a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"c", "\[Or]", 
+   RowBox[{"(", 
+    RowBox[{"a", "\[And]", 
+     RowBox[{"Antidual", "[", "c", "]"}]}], ")"}]}], "//", 
+  "BasisForm"}]], "Input",
+ CellChangeTimes->{3.944881188628599*^9},
+ CellLabel->"In[28]:=",ExpressionUUID->"7d38797e-2b00-4eca-96d1-17c64eaff26c"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"1\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"aw", " ", "cw", " ", "cx"}]}], "-", 
+      RowBox[{"2", " ", "ax", " ", "cw", " ", "cz"}], "+", 
+      RowBox[{"ax", " ", 
+       SuperscriptBox["cy", "2"]}], "-", 
+      RowBox[{"ay", " ", "cx", " ", "cy"}], "-", 
+      RowBox[{"az", " ", "cx", " ", "cz"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"2\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"aw", " ", "cw", " ", "cy"}]}], "-", 
+      RowBox[{"ax", " ", "cx", " ", "cy"}], "-", 
+      RowBox[{"2", " ", "ay", " ", "cw", " ", "cz"}], "+", 
+      RowBox[{"ay", " ", 
+       SuperscriptBox["cx", "2"]}], "-", 
+      RowBox[{"az", " ", "cy", " ", "cz"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"3\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"aw", " ", 
+       SuperscriptBox["cw", "2"]}], "+", 
+      RowBox[{"ax", " ", "cw", " ", "cx"}], "+", 
+      RowBox[{"ay", " ", "cw", " ", "cy"}], "-", 
+      RowBox[{"az", " ", "cw", " ", "cz"}], "+", 
+      RowBox[{"az", " ", 
+       SuperscriptBox["cx", "2"]}], "+", 
+      RowBox[{"az", " ", 
+       SuperscriptBox["cy", "2"]}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"4\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"aw", " ", "cw", " ", "cz"}]}], "+", 
+      RowBox[{"aw", " ", 
+       SuperscriptBox["cx", "2"]}], "+", 
+      RowBox[{"aw", " ", 
+       SuperscriptBox["cy", "2"]}], "+", 
+      RowBox[{"ax", " ", "cx", " ", "cz"}], "+", 
+      RowBox[{"ay", " ", "cy", " ", "cz"}], "+", 
+      RowBox[{"az", " ", 
+       SuperscriptBox["cz", "2"]}]}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.944881188865155*^9, 3.944883457968156*^9, 
+  3.94496087518978*^9},
+ CellLabel->
+  "Out[28]//TraditionalForm=",ExpressionUUID->"d6a5c704-9b7a-4fe3-8dc3-\
+b78a64eaa623"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"pnt", "=", 
+        RowBox[{"RoundPoint", "[", 
+         RowBox[{"0", ",", "0", ",", "1", ",", "1"}], "]"}]}], ",", 
+       RowBox[{"cir", "=", 
+        RowBox[{"RoundCircle", "[", 
+         RowBox[{"r", ",", "x", ",", "0"}], "]"}]}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Show", "[", 
+      RowBox[{
+       RowBox[{"DrawCircle", "[", "cir", "]"}], ",", 
+       RowBox[{"DrawRoundPoint", "[", "pnt", "]"}], ",", 
+       RowBox[{"DrawDipole", "[", 
+        RowBox[{"pnt", "\[And]", 
+         RowBox[{"Antidual", "[", "cir", "]"}]}], "]"}], ",", 
+       RowBox[{"PlotRange", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "2"}], ",", "8"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "}"}]}]}], "]"}]}], 
+    "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "4"}], "}"}], ",", 
+     RowBox[{"-", "2"}], ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"r", ",", "1"}], "}"}], ",", "0", ",", "6"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.9448811913129845`*^9, 3.9448811918292904`*^9}},
+ CellLabel->"In[29]:=",ExpressionUUID->"b0128b36-99cd-4eae-8b28-57fb5e8c950a"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`r$$ = 1, $CellContext`x$$ = 4, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`x$$], 4}, -2, 5}, {{
+       Hold[$CellContext`r$$], 1}, 0, 6}}, Typeset`size$$ = {
+    360., {106., 110.40000000000003`}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`r$$ = 1, $CellContext`x$$ = 4}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      With[{$CellContext`pnt = 
+         ConformalAlgebra2D`RoundPoint[0, 0, 1, 1], $CellContext`cir = 
+         ConformalAlgebra2D`RoundCircle[$CellContext`r$$, $CellContext`x$$, 
+           0]}, 
+        Show[
+         ConformalAlgebra2D`DrawCircle[$CellContext`cir], 
+         ConformalAlgebra2D`DrawRoundPoint[$CellContext`pnt], 
+         ConformalAlgebra2D`DrawDipole[
+          ConformalAlgebra2D`WedgeProduct[$CellContext`pnt, 
+           ConformalAlgebra2D`Antidual[$CellContext`cir]]], 
+         PlotRange -> {{-2, 8}, {-3, 3}}]], 
+      "Specifications" :> {{{$CellContext`x$$, 4}, -2, 
+         5}, {{$CellContext`r$$, 1}, 0, 6}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{408., {162.134033203125, 167.865966796875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.9448811927261724`*^9, 3.944883457988721*^9, 
+  3.94496087519828*^9},
+ CellLabel->"Out[29]=",ExpressionUUID->"fdafea7e-1248-4f0c-b841-168af8f0b885"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Expand round point onto line", "Subsection",
+ CellChangeTimes->{{3.896066434023424*^9, 3.8960664344452925`*^9}, {
+  3.944881232565446*^9, 
+  3.94488123395345*^9}},ExpressionUUID->"164c56de-2e9f-4acd-91b7-\
+565769265390"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "\[And]", 
+   RowBox[{"Antidual", "[", "g", "]"}]}], "//", "BasisForm"}]], "Input",
+ CellChangeTimes->{{3.944881209665332*^9, 3.944881211221487*^9}},
+ CellLabel->"In[30]:=",ExpressionUUID->"c49efc9d-3cf9-40f9-87a1-fd897bc5c455"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"12\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"ay", " ", "gx"}], "-", 
+      RowBox[{"ax", " ", "gy"}]}], ")"}]}], "+", 
+   RowBox[{"az", " ", "gy", " ", 
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"23\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm]}], "-", 
+   RowBox[{"az", " ", "gx", " ", 
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"31\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"41\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"aw", " ", "gx"}]}], "-", 
+      RowBox[{"ax", " ", "gz"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"42\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"aw", " ", "gy"}]}], "-", 
+      RowBox[{"ay", " ", "gz"}]}], ")"}]}], "-", 
+   RowBox[{"az", " ", "gz", " ", 
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"43\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.9448812120549664`*^9, 3.9448834580452523`*^9, 
+  3.9449608752517986`*^9},
+ CellLabel->
+  "Out[30]//TraditionalForm=",ExpressionUUID->"7c395a73-23bf-4136-8386-\
+76f0a2e02cfd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"pnt", "=", 
+        RowBox[{"RoundPoint", "[", 
+         RowBox[{"0", ",", "0", ",", "1", ",", "r"}], "]"}]}], ",", 
+       RowBox[{"cir", "=", 
+        RowBox[{"FlatLine", "[", 
+         RowBox[{
+          RowBox[{"-", "1"}], ",", "0", ",", "x"}], "]"}]}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Show", "[", 
+      RowBox[{
+       RowBox[{"DrawLine", "[", "cir", "]"}], ",", 
+       RowBox[{"DrawRoundPoint", "[", "pnt", "]"}], ",", 
+       RowBox[{"DrawDipole", "[", 
+        RowBox[{"pnt", "\[And]", 
+         RowBox[{"Antidual", "[", "cir", "]"}]}], "]"}], ",", 
+       RowBox[{"PlotRange", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "2"}], ",", "8"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "}"}]}]}], "]"}]}], 
+    "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "4"}], "}"}], ",", 
+     RowBox[{"-", "2"}], ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"r", ",", "1"}], "}"}], ",", "0", ",", "6"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.9448812141128216`*^9, 3.9448812146424255`*^9}},
+ CellLabel->"In[31]:=",ExpressionUUID->"77fe1fc5-f099-4505-bda4-36d8665b36c2"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`r$$ = 1, $CellContext`x$$ = 4, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`x$$], 4}, -2, 5}, {{
+       Hold[$CellContext`r$$], 1}, 0, 6}}, Typeset`size$$ = {
+    360., {106., 110.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`r$$ = 1, $CellContext`x$$ = 4}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      With[{$CellContext`pnt = 
+         ConformalAlgebra2D`RoundPoint[
+          0, 0, 1, $CellContext`r$$], $CellContext`cir = 
+         ConformalAlgebra2D`FlatLine[-1, 0, $CellContext`x$$]}, 
+        Show[
+         ConformalAlgebra2D`DrawLine[$CellContext`cir], 
+         ConformalAlgebra2D`DrawRoundPoint[$CellContext`pnt], 
+         ConformalAlgebra2D`DrawDipole[
+          ConformalAlgebra2D`WedgeProduct[$CellContext`pnt, 
+           ConformalAlgebra2D`Antidual[$CellContext`cir]]], 
+         PlotRange -> {{-2, 8}, {-3, 3}}]], 
+      "Specifications" :> {{{$CellContext`x$$, 4}, -2, 
+         5}, {{$CellContext`r$$, 1}, 0, 6}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{408., {161.134033203125, 166.865966796875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.944881215984029*^9, 3.9448834580662613`*^9, 
+  3.944960875270322*^9},
+ CellLabel->"Out[31]=",ExpressionUUID->"bf4e6dcb-d661-42e3-afb3-8b3868c47773"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Expand dipole onto circle", "Subsection",
+ CellChangeTimes->{{3.944881246126159*^9, 
+  3.9448812486841516`*^9}},ExpressionUUID->"c3b2465d-965d-4dbe-91fa-\
+90bce2e90109"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"d", "\[And]", 
+   RowBox[{"Antidual", "[", "c", "]"}]}], "//", "BasisForm"}]], "Input",
+ CellChangeTimes->{{3.944881250565219*^9, 3.9448812516162214`*^9}},
+ CellLabel->"In[32]:=",ExpressionUUID->"a929e8b6-829d-45fa-b339-07a31902753d"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"321\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"cw", " ", "dgz"}]}], "+", 
+      RowBox[{"cx", " ", "dgx"}], "+", 
+      RowBox[{"cy", " ", "dgy"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"412\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"cx", " ", "dpy"}], "-", 
+      RowBox[{"cy", " ", "dpx"}], "+", 
+      RowBox[{"cz", " ", "dgz"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"423\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"cw", " ", "dpy"}], "+", 
+      RowBox[{"cy", " ", "dpz"}], "+", 
+      RowBox[{"cz", " ", "dgx"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"431\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"cw", " ", "dpx"}]}], "-", 
+      RowBox[{"cx", " ", "dpz"}], "+", 
+      RowBox[{"cz", " ", "dgy"}]}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.94488125216821*^9, 3.94488345810928*^9, 
+  3.944960875306348*^9},
+ CellLabel->
+  "Out[32]//TraditionalForm=",ExpressionUUID->"19b61808-03f9-48c9-81b5-\
+a16d96e7e4a5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"dip", "=", 
+        RowBox[{"RoundDipole", "[", 
+         RowBox[{"1", ",", "0", ",", "0", ",", "1", ",", "0"}], "]"}]}], ",", 
+       RowBox[{"cir", "=", 
+        RowBox[{"RoundCircle", "[", 
+         RowBox[{"r", ",", "x", ",", "0"}], "]"}]}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Show", "[", 
+      RowBox[{
+       RowBox[{"DrawCircle", "[", "cir", "]"}], ",", 
+       RowBox[{"DrawDipole", "[", "dip", "]"}], ",", 
+       RowBox[{"DrawCircle", "[", 
+        RowBox[{"dip", "\[And]", 
+         RowBox[{"Antidual", "[", "cir", "]"}]}], "]"}], ",", 
+       RowBox[{"PlotRange", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "2"}], ",", "8"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "}"}]}]}], "]"}]}], 
+    "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "4"}], "}"}], ",", 
+     RowBox[{"-", "2"}], ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"r", ",", "1"}], "}"}], ",", "0", ",", "6"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.944881257476967*^9, 3.944881258210654*^9}},
+ CellLabel->"In[33]:=",ExpressionUUID->"1f4f2632-beaf-46ca-9f83-79a149eae7cb"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`r$$ = 1, $CellContext`x$$ = 4, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`x$$], 4}, -2, 5}, {{
+       Hold[$CellContext`r$$], 1}, 0, 6}}, Typeset`size$$ = {
+    360., {106., 110.40000000000003`}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`r$$ = 1, $CellContext`x$$ = 4}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      With[{$CellContext`dip = 
+         ConformalAlgebra2D`RoundDipole[1, 0, 0, 1, 0], $CellContext`cir = 
+         ConformalAlgebra2D`RoundCircle[$CellContext`r$$, $CellContext`x$$, 
+           0]}, 
+        Show[
+         ConformalAlgebra2D`DrawCircle[$CellContext`cir], 
+         ConformalAlgebra2D`DrawDipole[$CellContext`dip], 
+         ConformalAlgebra2D`DrawCircle[
+          ConformalAlgebra2D`WedgeProduct[$CellContext`dip, 
+           ConformalAlgebra2D`Antidual[$CellContext`cir]]], 
+         PlotRange -> {{-2, 8}, {-3, 3}}]], 
+      "Specifications" :> {{{$CellContext`x$$, 4}, -2, 
+         5}, {{$CellContext`r$$, 1}, 0, 6}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{408., {162.134033203125, 167.865966796875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.944881260145543*^9, 3.9448834581322913`*^9, 
+  3.944960875313854*^9},
+ CellLabel->"Out[33]=",ExpressionUUID->"2c09d205-deca-4dfc-a937-96b934498952"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Expand dipole onto line", "Subsection",
+ CellChangeTimes->{{3.9448812731457214`*^9, 
+  3.944881276409799*^9}},ExpressionUUID->"d181ff8b-06b4-4acd-82cc-\
+fda472744e62"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"d", "\[And]", 
+   RowBox[{"Antidual", "[", "g", "]"}]}], "//", "BasisForm"}]], "Input",
+ CellChangeTimes->{{3.9448812782468576`*^9, 3.9448812793820343`*^9}},
+ CellLabel->"In[34]:=",ExpressionUUID->"bba285ba-427f-4645-ba54-b73ea15917ac"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"321\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"dgx", " ", "gx"}], "+", 
+      RowBox[{"dgy", " ", "gy"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"412\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"dgz", " ", "gz"}], "-", 
+      RowBox[{"dpx", " ", "gy"}], "+", 
+      RowBox[{"dpy", " ", "gx"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"423\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"dgx", " ", "gz"}], "+", 
+      RowBox[{"dpz", " ", "gy"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"431\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"dgy", " ", "gz"}], "-", 
+      RowBox[{"dpz", " ", "gx"}]}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.9448812799991074`*^9, 3.944883458194829*^9, 
+  3.9449608753683853`*^9},
+ CellLabel->
+  "Out[34]//TraditionalForm=",ExpressionUUID->"6b6260bf-65ce-4818-ba3e-\
+9b1fc26071fa"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"dip", "=", 
+        RowBox[{"RoundDipole", "[", 
+         RowBox[{"1", ",", "0", ",", "0", ",", "1", ",", "0"}], "]"}]}], ",", 
+       RowBox[{"cir", "=", 
+        RowBox[{"FlatLine", "[", 
+         RowBox[{
+          RowBox[{"-", "0.86"}], ",", "0.5", ",", "x"}], "]"}]}]}], "}"}], 
+     ",", "\[IndentingNewLine]", 
+     RowBox[{"Show", "[", 
+      RowBox[{
+       RowBox[{"DrawLine", "[", "cir", "]"}], ",", 
+       RowBox[{"DrawDipole", "[", "dip", "]"}], ",", 
+       RowBox[{"DrawCircle", "[", 
+        RowBox[{"dip", "\[And]", 
+         RowBox[{"Antidual", "[", "cir", "]"}]}], "]"}], ",", 
+       RowBox[{"PlotRange", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "2"}], ",", "8"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "}"}]}]}], "]"}]}], 
+    "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "2"}], "}"}], ",", 
+     RowBox[{"-", "2"}], ",", "5"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.944881284271003*^9, 3.944881285413951*^9}},
+ CellLabel->"In[35]:=",ExpressionUUID->"fcd1d3ac-7cef-49f5-9411-fca97c6d1e3a"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`x$$ = 2, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`x$$], 2}, -2, 5}}, Typeset`size$$ = {
+    360., {106., 110.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`x$$ = 2}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      With[{$CellContext`dip = 
+         ConformalAlgebra2D`RoundDipole[1, 0, 0, 1, 0], $CellContext`cir = 
+         ConformalAlgebra2D`FlatLine[-0.86, 0.5, $CellContext`x$$]}, 
+        Show[
+         ConformalAlgebra2D`DrawLine[$CellContext`cir], 
+         ConformalAlgebra2D`DrawDipole[$CellContext`dip], 
+         ConformalAlgebra2D`DrawCircle[
+          ConformalAlgebra2D`WedgeProduct[$CellContext`dip, 
+           ConformalAlgebra2D`Antidual[$CellContext`cir]]], 
+         PlotRange -> {{-2, 8}, {-3, 3}}]], 
+      "Specifications" :> {{{$CellContext`x$$, 2}, -2, 5}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{408., {149.134033203125, 154.865966796875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.9448812879009295`*^9, 3.944883458213335*^9, 
+  3.9449608753769197`*^9},
+ CellLabel->"Out[35]=",ExpressionUUID->"b0e24d47-057d-4a3d-895f-30dc1f28d9b1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Expand flat point onto circle", "Subsection",
+ CellChangeTimes->{{3.9448813053432198`*^9, 
+  3.944881308463188*^9}},ExpressionUUID->"33fb67c3-d0a1-4514-9471-\
+4bb704f6745a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p", "\[And]", 
+   RowBox[{"Antidual", "[", "c", "]"}]}], "//", "BasisForm"}]], "Input",
+ CellChangeTimes->{{3.944881310757767*^9, 3.9448813118565207`*^9}},
+ CellLabel->"In[36]:=",ExpressionUUID->"0af6276b-ed9f-454f-8477-893740ffe932"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"412\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"cx", " ", "py"}], "-", 
+      RowBox[{"cy", " ", "px"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"423\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"cw", " ", "py"}], "+", 
+      RowBox[{"cy", " ", "pz"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"431\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"cw", " ", "px"}]}], "-", 
+      RowBox[{"cx", " ", "pz"}]}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.9448813123387547`*^9, 3.9448834582578664`*^9, 
+  3.9449608754109497`*^9},
+ CellLabel->
+  "Out[36]//TraditionalForm=",ExpressionUUID->"7e3ee94e-8e60-4393-b286-\
+62c7bdb807ce"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"dip", "=", 
+        RowBox[{"e", "[", 
+         RowBox[{"4", ",", "3"}], "]"}]}], ",", 
+       RowBox[{"cir", "=", 
+        RowBox[{"RoundCircle", "[", 
+         RowBox[{"r", ",", "x", ",", "0"}], "]"}]}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Show", "[", 
+      RowBox[{
+       RowBox[{"DrawCircle", "[", "cir", "]"}], ",", 
+       RowBox[{"DrawFlatPoint", "[", "dip", "]"}], ",", 
+       RowBox[{"DrawLine", "[", 
+        RowBox[{"dip", "\[And]", 
+         RowBox[{"Antidual", "[", "cir", "]"}]}], "]"}], ",", 
+       RowBox[{"PlotRange", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "2"}], ",", "8"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "}"}]}]}], "]"}]}], 
+    "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "4"}], "}"}], ",", 
+     RowBox[{"-", "2"}], ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"r", ",", "1"}], "}"}], ",", "0", ",", "6"}], "}"}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[37]:=",ExpressionUUID->"451ce421-8bef-4b87-993e-b21c00823471"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`r$$ = 1, $CellContext`x$$ = 4, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`x$$], 4}, -2, 5}, {{
+       Hold[$CellContext`r$$], 1}, 0, 6}}, Typeset`size$$ = {
+    360., {106., 110.40000000000003`}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`r$$ = 1, $CellContext`x$$ = 4}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      With[{$CellContext`dip = ConformalAlgebra2D`e[4, 3], $CellContext`cir = 
+         ConformalAlgebra2D`RoundCircle[$CellContext`r$$, $CellContext`x$$, 
+           0]}, 
+        Show[
+         ConformalAlgebra2D`DrawCircle[$CellContext`cir], 
+         ConformalAlgebra2D`DrawFlatPoint[$CellContext`dip], 
+         ConformalAlgebra2D`DrawLine[
+          ConformalAlgebra2D`WedgeProduct[$CellContext`dip, 
+           ConformalAlgebra2D`Antidual[$CellContext`cir]]], 
+         PlotRange -> {{-2, 8}, {-3, 3}}]], 
+      "Specifications" :> {{{$CellContext`x$$, 4}, -2, 
+         5}, {{$CellContext`r$$, 1}, 0, 6}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{408., {162.134033203125, 167.865966796875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.944881315246765*^9, 3.944883458277874*^9, 
+  3.9449608754199543`*^9},
+ CellLabel->"Out[37]=",ExpressionUUID->"93106c8f-032d-49de-838b-680748c8f091"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Expand flat point onto line", "Subsection",
+ CellChangeTimes->{{3.8962295995195756`*^9, 3.896229599925872*^9}, {
+  3.9448813350780215`*^9, 
+  3.944881337881188*^9}},ExpressionUUID->"d1a55d3f-a385-4c22-987e-\
+936ea37c5d9a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p", "\[And]", 
+   RowBox[{"Antidual", "[", "g", "]"}]}], "//", "BasisForm"}]], "Input",
+ CellChangeTimes->{{3.9448813419563694`*^9, 3.944881343043399*^9}},
+ CellLabel->"In[38]:=",ExpressionUUID->"c39bc7a3-3679-41f4-a8d8-0261d491c355"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"412\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"gx", " ", "py"}], "-", 
+      RowBox[{"gy", " ", "px"}]}], ")"}]}], "+", 
+   RowBox[{"gy", " ", "pz", " ", 
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"423\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm]}], "-", 
+   RowBox[{"gx", " ", "pz", " ", 
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"431\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.944881343600125*^9, 3.944883458335407*^9, 
+  3.944960875464985*^9},
+ CellLabel->
+  "Out[38]//TraditionalForm=",ExpressionUUID->"75a6ade5-070e-414d-a860-\
+95a424c9908c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Expand round point onto dipole", "Subsection",
+ CellChangeTimes->{{3.9448813519424987`*^9, 
+  3.9448813547257123`*^9}},ExpressionUUID->"5c3a0290-c18d-42d0-8e4d-\
+9fe056c40ad2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "\[And]", 
+   RowBox[{"Antidual", "[", "d", "]"}]}], "//", "BasisForm"}]], "Input",
+ CellChangeTimes->{3.9448813573166437`*^9},
+ CellLabel->"In[39]:=",ExpressionUUID->"a7a2d243-e8fb-46bd-8c4f-1a038c8cbb55"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"321\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"ax", " ", "dgy"}], "-", 
+      RowBox[{"ay", " ", "dgx"}], "+", 
+      RowBox[{"az", " ", "dpz"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"412\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"aw", " ", "dpz"}]}], "+", 
+      RowBox[{"ax", " ", "dpx"}], "+", 
+      RowBox[{"ay", " ", "dpy"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"423\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"aw", " ", "dgy"}]}], "-", 
+      RowBox[{"ay", " ", "dgz"}], "-", 
+      RowBox[{"az", " ", "dpx"}]}], ")"}]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"431\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"aw", " ", "dgx"}], "+", 
+      RowBox[{"ax", " ", "dgz"}], "-", 
+      RowBox[{"az", " ", "dpy"}]}], ")"}]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.944881357767276*^9, 3.944883458353919*^9, 
+  3.944960875475994*^9},
+ CellLabel->
+  "Out[39]//TraditionalForm=",ExpressionUUID->"83680447-f51f-4d70-be23-\
+64045c5e723a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"pnt", "=", 
+        RowBox[{"RoundPoint", "[", 
+         RowBox[{"0", ",", "0", ",", "1", ",", "0.5"}], "]"}]}], ",", 
+       RowBox[{"dip", "=", 
+        RowBox[{"RoundDipole", "[", 
+         RowBox[{"r", ",", "x", ",", "2", ",", "1", ",", "0"}], "]"}]}]}], 
+      "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Show", "[", 
+      RowBox[{
+       RowBox[{"DrawDipole", "[", "dip", "]"}], ",", 
+       RowBox[{"DrawRoundPoint", "[", "pnt", "]"}], ",", 
+       RowBox[{"DrawCircle", "[", 
+        RowBox[{"pnt", "\[And]", 
+         RowBox[{"Antidual", "[", "dip", "]"}]}], "]"}], ",", 
+       RowBox[{"PlotRange", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "2"}], ",", "8"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "}"}]}]}], "]"}]}], 
+    "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "2"}], "}"}], ",", 
+     RowBox[{"-", "2"}], ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"r", ",", "1"}], "}"}], ",", "0", ",", "6"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.944881359924285*^9, 3.9448813674163055`*^9}, {
+  3.944881403720057*^9, 3.9448814132533264`*^9}},
+ CellLabel->"In[40]:=",ExpressionUUID->"8a16567f-bf0e-47fe-85f4-7971c4a941cb"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`r$$ = 1, $CellContext`x$$ = 2, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`x$$], 2}, -2, 5}, {{
+       Hold[$CellContext`r$$], 1}, 0, 6}}, Typeset`size$$ = {
+    360., {106., 110.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`r$$ = 1, $CellContext`x$$ = 2}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      With[{$CellContext`pnt = 
+         ConformalAlgebra2D`RoundPoint[0, 0, 1, 0.5], $CellContext`dip = 
+         ConformalAlgebra2D`RoundDipole[$CellContext`r$$, $CellContext`x$$, 2,
+            1, 0]}, 
+        Show[
+         ConformalAlgebra2D`DrawDipole[$CellContext`dip], 
+         ConformalAlgebra2D`DrawRoundPoint[$CellContext`pnt], 
+         ConformalAlgebra2D`DrawCircle[
+          ConformalAlgebra2D`WedgeProduct[$CellContext`pnt, 
+           ConformalAlgebra2D`Antidual[$CellContext`dip]]], 
+         PlotRange -> {{-2, 8}, {-3, 3}}]], 
+      "Specifications" :> {{{$CellContext`x$$, 2}, -2, 
+         5}, {{$CellContext`r$$, 1}, 0, 6}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{408., {161.134033203125, 166.865966796875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.9448813677821107`*^9, {3.9448814042468195`*^9, 3.9448814137440248`*^9}, 
+   3.944883458373426*^9, 3.9449608754850054`*^9},
+ CellLabel->"Out[40]=",ExpressionUUID->"5a6d1039-277d-4de8-ad43-a6d5d6e150ad"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Expand round point onto flat point", "Subsection",
+ CellChangeTimes->{{3.944881430647052*^9, 
+  3.944881435174242*^9}},ExpressionUUID->"de72d1e7-6e27-43c7-b2cc-\
+93b5ef1ea9fc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "\[And]", 
+   RowBox[{"Antidual", "[", "p", "]"}]}], "//", "BasisForm"}]], "Input",
+ CellChangeTimes->{{3.94488143694004*^9, 3.9448814380273495`*^9}},
+ CellLabel->"In[41]:=",ExpressionUUID->"36263b29-51b1-453d-949b-7ffe3f56a0a0"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"az", " ", "pz", " ", 
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"321\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm]}], "+", 
+   RowBox[{
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"412\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"aw", " ", "pz"}]}], "+", 
+      RowBox[{"ax", " ", "px"}], "+", 
+      RowBox[{"ay", " ", "py"}]}], ")"}]}], "-", 
+   RowBox[{"az", " ", "px", " ", 
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"423\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm]}], "-", 
+   RowBox[{"az", " ", "py", " ", 
+    FormBox[
+     TagBox[
+      SubscriptBox[
+       StyleBox["\<\"e\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->16,
+        FontWeight->Bold], 
+       StyleBox["\<\"431\"\>",
+        StripOnInput->False,
+        FontFamily->"Times New Roman",
+        FontSize->9]],
+      DisplayForm],
+     TraditionalForm]}]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.9448814385292234`*^9, 3.944883458422522*^9, 
+  3.944960875524032*^9},
+ CellLabel->
+  "Out[41]//TraditionalForm=",ExpressionUUID->"e9e6abce-9b62-4f3c-98a4-\
+83ae63a94a7b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"pnt", "=", 
+        RowBox[{"RoundPoint", "[", 
+         RowBox[{"0", ",", "0", ",", "1", ",", "0.5"}], "]"}]}], ",", 
+       RowBox[{"dip", "=", 
+        RowBox[{"FlatPoint", "[", 
+         RowBox[{"x", ",", "0"}], "]"}]}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Show", "[", 
+      RowBox[{
+       RowBox[{"DrawFlatPoint", "[", "dip", "]"}], ",", 
+       RowBox[{"DrawRoundPoint", "[", "pnt", "]"}], ",", 
+       RowBox[{"DrawCircle", "[", 
+        RowBox[{"pnt", "\[And]", 
+         RowBox[{"Antidual", "[", "dip", "]"}]}], "]"}], ",", 
+       RowBox[{"PlotRange", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "2"}], ",", "8"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "3"}], ",", "3"}], "}"}]}], "}"}]}]}], "]"}]}], 
+    "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "4"}], "}"}], ",", 
+     RowBox[{"-", "2"}], ",", "5"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9448814539086027`*^9, 3.944881532937787*^9}},
+ CellLabel->"In[42]:=",ExpressionUUID->"10e2dc5d-5598-479b-b5d4-de5635fad108"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`x$$ = 4, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`x$$], 4}, -2, 5}}, Typeset`size$$ = {
+    360., {106., 110.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`x$$ = 4}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      With[{$CellContext`pnt = 
+         ConformalAlgebra2D`RoundPoint[0, 0, 1, 0.5], $CellContext`dip = 
+         ConformalAlgebra2D`FlatPoint[$CellContext`x$$, 0]}, 
+        Show[
+         ConformalAlgebra2D`DrawFlatPoint[$CellContext`dip], 
+         ConformalAlgebra2D`DrawRoundPoint[$CellContext`pnt], 
+         ConformalAlgebra2D`DrawCircle[
+          ConformalAlgebra2D`WedgeProduct[$CellContext`pnt, 
+           ConformalAlgebra2D`Antidual[$CellContext`dip]]], 
+         PlotRange -> {{-2, 8}, {-3, 3}}]], 
+      "Specifications" :> {{{$CellContext`x$$, 4}, -2, 5}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{408., {149.134033203125, 154.865966796875}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.9448815340624604`*^9, 3.9448834584420366`*^9, 
+  3.944960875533038*^9},
+ CellLabel->"Out[42]=",ExpressionUUID->"18ce29f1-6ef6-4d32-8b46-f4cf5d7137e5"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1635, 970},
+WindowMargins->{{Automatic, 118}, {7.5, Automatic}},
+Magnification:>1. Inherited,
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"6f8d2bb3-dffd-47c2-9108-1016619334ad"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 539, 9, 28, "Input",ExpressionUUID->"a7d79b4c-8ac3-49dc-931a-f2ce114ed620"],
+Cell[1100, 31, 546, 14, 28, "Input",ExpressionUUID->"bd61b23e-b47f-46f0-bb3f-56c48aa7a131"],
+Cell[1649, 47, 545, 14, 28, "Input",ExpressionUUID->"fb8495f8-a6b0-44aa-864c-890354895ce4"],
+Cell[2197, 63, 530, 14, 28, "Input",ExpressionUUID->"bd1c64b0-a7c3-4895-bab2-8001fd704f29"],
+Cell[2730, 79, 554, 14, 28, "Input",ExpressionUUID->"2706d749-162f-4dbf-882d-d41e26ae5cd0"],
+Cell[3287, 95, 435, 12, 28, "Input",ExpressionUUID->"1c217c93-e00d-49da-9ccc-891327dfdcfb"],
+Cell[3725, 109, 433, 12, 28, "Input",ExpressionUUID->"c1552c83-0403-49e7-83c5-818b454101e9"],
+Cell[4161, 123, 850, 24, 28, "Input",ExpressionUUID->"1aecaf2f-813b-443c-98a9-78a1a2a727b6"],
+Cell[5014, 149, 751, 22, 28, "Input",ExpressionUUID->"44c53bd9-6065-4a73-8e37-4e9ae755cb4e"],
+Cell[5768, 173, 706, 18, 28, "Input",ExpressionUUID->"8fdfe2a2-d205-42a9-94e1-6e227c7925e4"],
+Cell[6477, 193, 655, 17, 28, "Input",ExpressionUUID->"db1b92dc-2e10-46a1-990c-c357f0eb1ea8"],
+Cell[CellGroupData[{
+Cell[7157, 214, 160, 3, 67, "Section",ExpressionUUID->"a0ceac80-4dd7-4a0f-831c-3dfa5e4432fe"],
+Cell[CellGroupData[{
+Cell[7342, 221, 176, 3, 54, "Subsection",ExpressionUUID->"3358283d-aee9-4dc1-a034-b80bbaa1c137"],
+Cell[CellGroupData[{
+Cell[7543, 228, 231, 4, 28, "Input",ExpressionUUID->"27f6f709-1317-4713-b15d-bf30beaba4fd"],
+Cell[7777, 234, 3227, 121, 44, "Output",ExpressionUUID->"e55e8479-7be0-4193-93f1-6aa1175c3fcb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11041, 360, 1775, 46, 67, "Input",ExpressionUUID->"32398640-7b3b-47cf-a331-6a725142e3e3"],
+Cell[12819, 408, 2410, 50, 451, "Output",ExpressionUUID->"5e8f7b92-314a-4e97-931d-2b0eb3bf8217"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15278, 464, 111, 0, 54, "Subsection",ExpressionUUID->"a785b031-7e8b-4119-be74-f064dc6b4a5a"],
+Cell[CellGroupData[{
+Cell[15414, 468, 232, 4, 28, "Input",ExpressionUUID->"90e48e29-954d-450f-8ed3-76aefd287668"],
+Cell[15649, 474, 1744, 64, 44, "Output",ExpressionUUID->"b15ae2e7-fc92-49b6-bf49-a95e1872c822"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17442, 544, 180, 3, 54, "Subsection",ExpressionUUID->"b97c827c-01f1-4d0c-8002-c559213a185b"],
+Cell[CellGroupData[{
+Cell[17647, 551, 209, 4, 28, "Input",ExpressionUUID->"a75f6c4c-5869-468f-8a2a-1fd06646206a"],
+Cell[17859, 557, 2434, 88, 44, "Output",ExpressionUUID->"5d636c4f-0bc0-4b99-9dc1-639bb843297d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20330, 650, 1954, 51, 67, "Input",ExpressionUUID->"ce43ceab-de9b-4b7f-9bdb-b525a90e5c10"],
+Cell[22287, 703, 2799, 56, 455, "Output",ExpressionUUID->"caf05023-2471-4d57-be73-a5d68c780147"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25135, 765, 167, 3, 54, "Subsection",ExpressionUUID->"c6bfc9f6-0d78-4a79-8981-70fdfe15be61"],
+Cell[CellGroupData[{
+Cell[25327, 772, 230, 4, 28, "Input",ExpressionUUID->"8a8be443-e577-4bab-aec7-94e03d9e3df2"],
+Cell[25560, 778, 1739, 64, 44, "Output",ExpressionUUID->"df504fa1-0fad-429a-b8ec-fe85eab61e69"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27348, 848, 169, 3, 54, "Subsection",ExpressionUUID->"7eb19fa9-0524-4706-b62d-eb8eae2a26e5"],
+Cell[CellGroupData[{
+Cell[27542, 855, 258, 5, 28, "Input",ExpressionUUID->"dcc40222-ade1-478b-bcf5-c6c0e2309685"],
+Cell[27803, 862, 3229, 121, 44, "Output",ExpressionUUID->"1a9479ab-6b06-4d8d-9663-80c38e76aaa8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31069, 988, 1432, 40, 28, "Input",ExpressionUUID->"c2fb787f-032d-4d5d-81bd-cfec1862c1a8"],
+Cell[32504, 1030, 2220, 45, 467, "Output",ExpressionUUID->"a9f367d2-1346-4628-b131-336e9e637087"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34773, 1081, 173, 3, 54, "Subsection",ExpressionUUID->"b6d7e7a2-ec6f-4054-8f7a-a360c69a5aef"],
+Cell[CellGroupData[{
+Cell[34971, 1088, 259, 5, 28, "Input",ExpressionUUID->"435b7116-67b3-4c98-832d-1ac5a36fa281"],
+Cell[35233, 1095, 2971, 110, 44, "Output",ExpressionUUID->"84b093e5-b2e0-447e-a29e-853b6509c8b2"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38253, 1211, 177, 3, 54, "Subsection",ExpressionUUID->"d794ebf4-2d8d-4a5c-9e52-4cfc2d8369ea"],
+Cell[CellGroupData[{
+Cell[38455, 1218, 227, 4, 28, "Input",ExpressionUUID->"46f1c70a-111a-4a73-bed3-9b40ddb610c3"],
+Cell[38685, 1224, 2423, 88, 44, "Output",ExpressionUUID->"4a5aa667-d405-458b-9014-edd5e3698393"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41145, 1317, 1685, 45, 67, "Input",ExpressionUUID->"a6238703-a7cf-4b4d-882e-92731c4e11fe"],
+Cell[42833, 1364, 2398, 50, 491, "Output",ExpressionUUID->"8772131a-02b3-4580-9f6c-39786f8ff0bf"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45280, 1420, 100, 0, 54, "Subsection",ExpressionUUID->"675734da-b1f1-4a33-88b7-7a4fcf81575e"],
+Cell[CellGroupData[{
+Cell[45405, 1424, 232, 4, 28, "Input",ExpressionUUID->"1f3dcda9-085a-4ce2-820d-042d2484eb1d"],
+Cell[45640, 1430, 2301, 85, 44, "Output",ExpressionUUID->"5fd473a2-cd55-420e-aad4-76150f6f681d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47978, 1520, 1533, 43, 67, "Input",ExpressionUUID->"40ca9f1a-8374-48b0-b58a-10fa9a40cd9e"],
+Cell[49514, 1565, 2314, 47, 491, "Output",ExpressionUUID->"6acf72c7-b119-4cc2-97d6-39eea7795c95"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51877, 1618, 232, 4, 54, "Subsection",ExpressionUUID->"6a813dc5-da7c-4ae4-a58e-4d78285e2870"],
+Cell[CellGroupData[{
+Cell[52134, 1626, 232, 4, 28, "Input",ExpressionUUID->"0a872a7a-a5cc-4e83-bd2e-ba95196aad97"],
+Cell[52369, 1632, 2004, 73, 44, "Output",ExpressionUUID->"3ba0940a-97e9-499d-b5a5-3230d1e13544"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54410, 1710, 1443, 41, 67, "Input",ExpressionUUID->"37d71877-ba59-4938-91d5-e631e18bd9d9"],
+Cell[55856, 1753, 2236, 46, 491, "Output",ExpressionUUID->"a125df10-77f2-44c7-a454-fef4f790b322"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[58153, 1806, 158, 3, 67, "Section",ExpressionUUID->"98f34c2f-b8f5-4387-a36a-d68a0724bf6b"],
+Cell[CellGroupData[{
+Cell[58336, 1813, 227, 4, 54, "Subsection",ExpressionUUID->"1f9c291a-0460-477e-883a-8cc5631b5b59"],
+Cell[CellGroupData[{
+Cell[58588, 1821, 269, 5, 28, "Input",ExpressionUUID->"2b783acf-9497-4d45-8761-f3c0db3cb2a0"],
+Cell[58860, 1828, 3300, 124, 44, "Output",ExpressionUUID->"b5856c9a-c0be-4632-9f97-5777617fb31a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62197, 1957, 301, 8, 28, "Input",ExpressionUUID->"7d38797e-2b00-4eca-96d1-17c64eaff26c"],
+Cell[62501, 1967, 3249, 108, 47, "Output",ExpressionUUID->"d6a5c704-9b7a-4fe3-8dc3-b78a64eaa623"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[65787, 2080, 1470, 42, 67, "Input",ExpressionUUID->"b0128b36-99cd-4eae-8b28-57fb5e8c950a"],
+Cell[67260, 2124, 2296, 47, 349, "Output",ExpressionUUID->"fdafea7e-1248-4f0c-b841-168af8f0b885"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[69605, 2177, 226, 4, 54, "Subsection",ExpressionUUID->"164c56de-2e9f-4acd-91b7-565769265390"],
+Cell[CellGroupData[{
+Cell[69856, 2185, 267, 5, 28, "Input",ExpressionUUID->"c49efc9d-3cf9-40f9-87a1-fd897bc5c455"],
+Cell[70126, 2192, 2986, 111, 44, "Output",ExpressionUUID->"7c395a73-23bf-4136-8386-76f0a2e02cfd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[73149, 2308, 1491, 43, 67, "Input",ExpressionUUID->"77fe1fc5-f099-4505-bda4-36d8665b36c2"],
+Cell[74643, 2353, 2277, 47, 347, "Output",ExpressionUUID->"bf4e6dcb-d661-42e3-afb3-8b3868c47773"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[76969, 2406, 175, 3, 54, "Subsection",ExpressionUUID->"c3b2465d-965d-4dbe-91fa-90bce2e90109"],
+Cell[CellGroupData[{
+Cell[77169, 2413, 269, 5, 28, "Input",ExpressionUUID->"a929e8b6-829d-45fa-b339-07a31902753d"],
+Cell[77441, 2420, 2449, 89, 44, "Output",ExpressionUUID->"19b61808-03f9-48c9-81b5-a16d96e7e4a5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[79927, 2514, 1473, 42, 67, "Input",ExpressionUUID->"1f4f2632-beaf-46ca-9f83-79a149eae7cb"],
+Cell[81403, 2558, 2297, 47, 349, "Output",ExpressionUUID->"2c09d205-deca-4dfc-a937-96b934498952"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[83749, 2611, 173, 3, 54, "Subsection",ExpressionUUID->"d181ff8b-06b4-4acd-82cc-fda472744e62"],
+Cell[CellGroupData[{
+Cell[83947, 2618, 271, 5, 28, "Input",ExpressionUUID->"bba285ba-427f-4645-ba54-b73ea15917ac"],
+Cell[84221, 2625, 2289, 84, 44, "Output",ExpressionUUID->"6b6260bf-65ce-4818-ba3e-9b1fc26071fa"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[86547, 2714, 1374, 38, 67, "Input",ExpressionUUID->"fcd1d3ac-7cef-49f5-9411-fca97c6d1e3a"],
+Cell[87924, 2754, 2121, 43, 323, "Output",ExpressionUUID->"b0e24d47-057d-4a3d-895f-30dc1f28d9b1"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[90094, 2803, 179, 3, 54, "Subsection",ExpressionUUID->"33fb67c3-d0a1-4514-9471-4bb704f6745a"],
+Cell[CellGroupData[{
+Cell[90298, 2810, 269, 5, 28, "Input",ExpressionUUID->"0af6276b-ed9f-454f-8477-893740ffe932"],
+Cell[90570, 2817, 1769, 65, 44, "Output",ExpressionUUID->"7e3ee94e-8e60-4393-b286-62c7bdb807ce"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[92376, 2887, 1368, 41, 67, "Input",ExpressionUUID->"451ce421-8bef-4b87-993e-b21c00823471"],
+Cell[93747, 2930, 2269, 46, 349, "Output",ExpressionUUID->"93106c8f-032d-49de-838b-680748c8f091"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[96065, 2982, 228, 4, 54, "Subsection",ExpressionUUID->"d1a55d3f-a385-4c22-987e-936ea37c5d9a"],
+Cell[CellGroupData[{
+Cell[96318, 2990, 269, 5, 28, "Input",ExpressionUUID->"c39bc7a3-3679-41f4-a8d8-0261d491c355"],
+Cell[96590, 2997, 1546, 56, 44, "Output",ExpressionUUID->"75a6ade5-070e-414d-a860-95a424c9908c"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[98185, 3059, 182, 3, 54, "Subsection",ExpressionUUID->"5c3a0290-c18d-42d0-8e4d-9fe056c40ad2"],
+Cell[CellGroupData[{
+Cell[98392, 3066, 245, 5, 28, "Input",ExpressionUUID->"a7a2d243-e8fb-46bd-8c4f-1a038c8cbb55"],
+Cell[98640, 3073, 2451, 89, 44, "Output",ExpressionUUID->"83680447-f51f-4d70-be23-64045c5e723a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[101128, 3167, 1542, 43, 67, "Input",ExpressionUUID->"8a16567f-bf0e-47fe-85f4-7971c4a941cb"],
+Cell[102673, 3212, 2346, 48, 347, "Output",ExpressionUUID->"5a6d1039-277d-4de8-ad43-a6d5d6e150ad"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[105068, 3266, 182, 3, 54, "Subsection",ExpressionUUID->"de72d1e7-6e27-43c7-b2cc-93b5ef1ea9fc"],
+Cell[CellGroupData[{
+Cell[105275, 3273, 268, 5, 28, "Input",ExpressionUUID->"36263b29-51b1-453d-949b-7ffe3f56a0a0"],
+Cell[105546, 3280, 2010, 73, 44, "Output",ExpressionUUID->"e9e6abce-9b62-4f3c-98a4-83ae63a94a7b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[107593, 3358, 1336, 37, 67, "Input",ExpressionUUID->"10e2dc5d-5598-479b-b5d4-de5635fad108"],
+Cell[108932, 3397, 2120, 43, 323, "Output",ExpressionUUID->"18ce29f1-6ef6-4d32-8b46-f4cf5d7137e5"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
