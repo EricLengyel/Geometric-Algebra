@@ -135,6 +135,12 @@ BulkExpansion::usage = "BulkExpansion[x,y] returns the right bulk expansion of x
 WeightExpansion::usage = "WeightExpansion[x,y] returns the right weight expansion of x and y";
 
 
+TranswedgeProduct::usage = "TranswedgeProduct[x,y,k] returns the transwedge product of order k of x and y";
+
+
+TranswedgeAntiproduct::usage = "TranswedgeAntiproduct[x,y,k] returns the transwedge antiproduct of order k of x and y";
+
+
 GeometricProduct::usage = "GeometricProduct[x,y] returns the geometric product of x and y";
 
 
@@ -706,7 +712,7 @@ WedgeProduct[e[s_,t_,p_,q_,r_],e[x_,y_,z_,w_]]:=0
 WedgeProduct[e[s_,t_,p_,q_,r_],e[x_,y_,z_,w_,v_]]:=0
 
 
-WedgeProduct[x_,y_]:=x y/;FreeQ[Hold[x],e]&&!FreeQ[Hold[y],e]
+WedgeProduct[x_,y_]:=x y/;FreeQ[Hold[x],e]
 
 
 WedgeProduct[x_,y_]:=y x/;FreeQ[Hold[y],e]&&!FreeQ[Hold[x],e]
@@ -744,6 +750,31 @@ BulkExpansion[x_,y_]:=WedgeProduct[x,BulkDual[y]]
 
 
 WeightExpansion[x_,y_]:=WedgeProduct[x,WeightDual[y]]
+
+
+(* ::Subsubsection:: *)
+(*Transwedge Products*)
+
+
+TranswedgeProduct[x_,y_,0]:=WedgeProduct[x,y]
+
+
+TranswedgeProduct[x_,y_,1]:=Sum[Module[{c},c=VectorList[[i]];WedgeProduct[AntiwedgeProduct[Comp[c],x],AntiwedgeProduct[y,BulkDual[c]]]],{i,1,5}]
+
+
+TranswedgeProduct[x_,y_,2]:=Sum[Module[{c},c=BivectorList[[i]];WedgeProduct[AntiwedgeProduct[Comp[c],x],AntiwedgeProduct[y,BulkDual[c]]]],{i,1,10}]
+
+
+TranswedgeProduct[x_,y_,3]:=Sum[Module[{c},c=TrivectorList[[i]];WedgeProduct[AntiwedgeProduct[Comp[c],x],AntiwedgeProduct[y,BulkDual[c]]]],{i,1,10}]
+
+
+TranswedgeProduct[x_,y_,4]:=Sum[Module[{c},c=QuadrivectorList[[i]];WedgeProduct[AntiwedgeProduct[Comp[c],x],AntiwedgeProduct[y,BulkDual[c]]]],{i,1,5}]
+
+
+TranswedgeProduct[x_,y_,5]:=0
+
+
+TranswedgeAntiproduct[x_,y_,k_]:=Comp[TranswedgeProduct[Comp[x],Comp[y],k]]
 
 
 (* ::Subsubsection:: *)
