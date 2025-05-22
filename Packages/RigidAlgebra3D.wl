@@ -102,6 +102,12 @@ BulkDual::usage = "BulkDual[x] returns the right bulk dual of x";
 WeightDual::usage = "WeightDual[x] returns the right weight dual of x";
 
 
+LeftBulkDual::usage = "BulkDual[x] returns the left bulk dual of x";
+
+
+LeftWeightDual::usage = "WeightDual[x] returns the left weight dual of x";
+
+
 DotProduct::usage = "DotProduct[x,y] returns the inner product of x and y";
 
 
@@ -133,6 +139,12 @@ BulkExpansion::usage = "BulkExpansion[x,y] returns the right bulk expansion of x
 
 
 WeightExpansion::usage = "WeightExpansion[x,y] returns the right weight expansion of x and y";
+
+
+TranswedgeProduct::usage = "TranswedgeProduct[x,y,k] returns the transwedge product of order k of x and y";
+
+
+TranswedgeAntiproduct::usage = "TranswedgeAntiproduct[x,y,k] returns the transwedge antiproduct of order k of x and y";
 
 
 GeometricProduct::usage = "GeometricProduct[x,y] returns the geometric product of x and y";
@@ -459,6 +471,12 @@ Table[BulkDual[BasisList[[x]]]=RightComp[ApplyMetric[BasisList[[x]]]],{x,1,16}];
 Table[WeightDual[BasisList[[x]]]=RightComp[ApplyAntimetric[BasisList[[x]]]],{x,1,16}];
 
 
+Table[LeftBulkDual[BasisList[[x]]]=LeftComp[ApplyMetric[BasisList[[x]]]],{x,1,16}];
+
+
+Table[LeftWeightDual[BasisList[[x]]]=LeftComp[ApplyAntimetric[BasisList[[x]]]],{x,1,16}];
+
+
 BulkDual[x_]:=x e[1,2,3,4]/;FreeQ[x,e]
 
 
@@ -481,6 +499,30 @@ WeightDual[x_ y_]:=WeightDual[x]y/;FreeQ[y,e]
 
 
 WeightDual[x_+y_]:=WeightDual[x]+WeightDual[y]
+
+
+LeftBulkDual[x_]:=x e[1,2,3,4]/;FreeQ[x,e]
+
+
+LeftBulkDual[x_ y_]:=x LeftBulkDual[y]/;FreeQ[x,e]
+
+
+LeftBulkDual[x_ y_]:=LeftBulkDual[x]y/;FreeQ[y,e]
+
+
+LeftBulkDual[x_+y_]:=LeftBulkDual[x]+LeftBulkDual[y]
+
+
+LeftWeightDual[x_]:=0/;FreeQ[x,e]
+
+
+LeftWeightDual[x_ y_]:=x LeftWeightDual[y]/;FreeQ[x,e]
+
+
+LeftWeightDual[x_ y_]:=LeftWeightDual[x]y/;FreeQ[y,e]
+
+
+LeftWeightDual[x_+y_]:=LeftWeightDual[x]+LeftWeightDual[y]
 
 
 (* ::Subsubsection:: *)
@@ -618,13 +660,10 @@ WedgeProduct[e[s_,t_,p_,q_],e[x_,y_,z_]]:=0
 WedgeProduct[e[s_,t_,p_,q_],e[x_,y_,z_,w_]]:=0
 
 
-WedgeProduct[x_,y_]:=x y/;FreeQ[x,e]&&!FreeQ[y,e]
+WedgeProduct[x_,y_]:=x y/;FreeQ[x,e]
 
 
 WedgeProduct[x_,y_]:=y x/;FreeQ[y,e]&&!FreeQ[x,e]
-
-
-WedgeProduct[x_,y_]:=x y/;FreeQ[x,e]&&FreeQ[y,e]
 
 
 WedgeProduct[x_ y_,z_]:=x WedgeProduct[y,z]/;FreeQ[x,e]
@@ -659,6 +698,28 @@ BulkExpansion[x_,y_]:=WedgeProduct[x,BulkDual[y]]
 
 
 WeightExpansion[x_,y_]:=WedgeProduct[x,WeightDual[y]]
+
+
+(* ::Subsubsection:: *)
+(*Transwedge Products*)
+
+
+TranswedgeProduct[x_,y_,0]:=WedgeProduct[x,y]
+
+
+TranswedgeProduct[x_,y_,1]:=Sum[Module[{c},c=VectorList[[i]];WedgeProduct[AntiwedgeProduct[LeftComp[c],x],AntiwedgeProduct[y,BulkDual[c]]]],{i,1,4}]
+
+
+TranswedgeProduct[x_,y_,2]:=Sum[Module[{c},c=BivectorList[[i]];WedgeProduct[AntiwedgeProduct[LeftComp[c],x],AntiwedgeProduct[y,BulkDual[c]]]],{i,1,6}]
+
+
+TranswedgeProduct[x_,y_,3]:=Sum[Module[{c},c=TrivectorList[[i]];WedgeProduct[AntiwedgeProduct[LeftComp[c],x],AntiwedgeProduct[y,BulkDual[c]]]],{i,1,4}]
+
+
+TranswedgeProduct[x_,y_,4]:=0
+
+
+TranswedgeAntiproduct[x_,y_,k_]:=LeftComp[TranswedgeProduct[RightComp[x],RightComp[y],k]]
 
 
 (* ::Subsubsection:: *)

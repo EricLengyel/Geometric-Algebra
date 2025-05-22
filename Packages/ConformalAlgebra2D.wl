@@ -159,6 +159,12 @@ Contraction::usage = "Contraction[x,y] returns the right contraction of x and y"
 Expansion::usage = "Expansion[x,y] returns the right expansion of x and y";
 
 
+TranswedgeProduct::usage = "TranswedgeProduct[x,y,k] returns the transwedge product of order k of x and y";
+
+
+TranswedgeAntiproduct::usage = "TranswedgeAntiproduct[x,y,k] returns the transwedge antiproduct of order k of x and y";
+
+
 GeometricProduct::usage = "GeometricProduct[x,y] returns the geometric product of x and y";
 
 
@@ -620,7 +626,7 @@ FlatWeightNorm[x_,rules_:{}]:=Module[{y},y=WedgeProduct[AntiwedgeProduct[x,e[3,2
 (*Exterior Product*)
 
 
-WedgeProduct[x_,y_]:=x y/;FreeQ[Hold[x],e]&&FreeQ[Hold[y],e]&&FreeQ[Hold[x],\[CurlyEpsilon]]&&FreeQ[Hold[y],\[CurlyEpsilon]]
+WedgeProduct[x_,y_]:=x y/;FreeQ[Hold[x],e]&&FreeQ[Hold[y],e]
 
 
 WedgeProduct[e[],x_]:=x/;!FreeQ[Hold[x],e]
@@ -695,7 +701,7 @@ WedgeProduct[e[s_,t_,p_,q_],e[x_,y_,z_]]:=0
 WedgeProduct[e[s_,t_,p_,q_],e[x_,y_,z_,w_]]:=0
 
 
-WedgeProduct[x_,y_]:=x y/;FreeQ[Hold[x],e]&&!FreeQ[Hold[y],e]
+WedgeProduct[x_,y_]:=x y/;FreeQ[Hold[x],e]
 
 
 WedgeProduct[x_,y_]:=y x/;FreeQ[Hold[y],e]&&!FreeQ[Hold[x],e]
@@ -730,172 +736,32 @@ Expansion[x_,y_]:=WedgeProduct[x,Antidual[y]]
 
 
 (* ::Subsubsection:: *)
+(*Transwedge Products*)
+
+
+TranswedgeProduct[x_,y_,0]:=WedgeProduct[x,y]
+
+
+TranswedgeProduct[x_,y_,1]:=Sum[Module[{c},c=VectorList[[i]];WedgeProduct[AntiwedgeProduct[LeftComp[c],x],AntiwedgeProduct[y,Dual[c]]]],{i,1,4}]
+
+
+TranswedgeProduct[x_,y_,2]:=Sum[Module[{c},c=BivectorList[[i]];WedgeProduct[AntiwedgeProduct[LeftComp[c],x],AntiwedgeProduct[y,Dual[c]]]],{i,1,6}]
+
+
+TranswedgeProduct[x_,y_,3]:=Sum[Module[{c},c=TrivectorList[[i]];WedgeProduct[AntiwedgeProduct[LeftComp[c],x],AntiwedgeProduct[y,Dual[c]]]],{i,1,4}]
+
+
+TranswedgeProduct[x_,y_,4]:=-WedgeProduct[AntiwedgeProduct[e[],x],AntiwedgeProduct[y,e[]]]
+
+
+TranswedgeAntiproduct[x_,y_,k_]:=LeftComp[TranswedgeProduct[RightComp[x],RightComp[y],k]]
+
+
+(* ::Subsubsection:: *)
 (*Geometric Product*)
 
 
-\[CurlyEpsilon][1,1]=\[CurlyEpsilon][]; \[CurlyEpsilon][2,2]=\[CurlyEpsilon][]; \[CurlyEpsilon][3,3]=-\[CurlyEpsilon][]; \[CurlyEpsilon][4,4]=\[CurlyEpsilon][];
-
-
-\[CurlyEpsilon][3,2]=-\[CurlyEpsilon][2,3]; \[CurlyEpsilon][1,3]=-\[CurlyEpsilon][3,1]; \[CurlyEpsilon][2,1]=-\[CurlyEpsilon][1,2];
-
-
-\[CurlyEpsilon][x_,4]:=-\[CurlyEpsilon][4,x]
-
-
-\[CurlyEpsilon][1,2,3]=-\[CurlyEpsilon][3,2,1]; \[CurlyEpsilon][2,1,3]=\[CurlyEpsilon][3,2,1]; \[CurlyEpsilon][1,3,2]=\[CurlyEpsilon][3,2,1]; \[CurlyEpsilon][3,1,2]=-\[CurlyEpsilon][3,2,1]; \[CurlyEpsilon][2,3,1]=-\[CurlyEpsilon][3,2,1];
-
-
-\[CurlyEpsilon][4,3,2]=-\[CurlyEpsilon][4,2,3]; \[CurlyEpsilon][4,1,3]=-\[CurlyEpsilon][4,3,1]; \[CurlyEpsilon][4,2,1]=-\[CurlyEpsilon][4,1,2];
-
-
-Table[\[CurlyEpsilon][x,y,4]=\[CurlyEpsilon][4,x,y],{x,1,3},{y,1,3}];
-
-
-Table[\[CurlyEpsilon][x,4,y]=-\[CurlyEpsilon][4,x,y],{x,1,3},{y,1,3}];
-
-
-WedgeProduct[\[CurlyEpsilon][],x_]:=x/;!FreeQ[Hold[x],\[CurlyEpsilon]]
-
-
-WedgeProduct[x_,\[CurlyEpsilon][]]:=x/;!FreeQ[Hold[x],\[CurlyEpsilon]]
-
-
-\[CurlyEpsilon][x_,y_,z_]:=WedgeProduct[\[CurlyEpsilon][x,y],\[CurlyEpsilon][z]]/;x==y
-
-
-\[CurlyEpsilon][x_,y_,z_]:=-WedgeProduct[\[CurlyEpsilon][x,z],\[CurlyEpsilon][y]]/;x==z
-
-
-\[CurlyEpsilon][x_,y_,z_]:=WedgeProduct[\[CurlyEpsilon][x],\[CurlyEpsilon][y,z]]/;y==z
-
-
-\[CurlyEpsilon][x_,y_,z_,w_]:=WedgeProduct[\[CurlyEpsilon][x,w],\[CurlyEpsilon][y,z]]/;x==w||y==z
-
-
-\[CurlyEpsilon][x_,y_,z_,w_]:=-WedgeProduct[\[CurlyEpsilon][x,z],\[CurlyEpsilon][y,w]]/;x==z||y==w
-
-
-\[CurlyEpsilon][x_,y_,z_,w_]:=WedgeProduct[\[CurlyEpsilon][x,y],\[CurlyEpsilon][z,w]]/;x==y||z==w
-
-
-\[CurlyEpsilon][x_,y_,z_,w_]:=\[CurlyEpsilon][1,2,3,4]Signature[{x,y,z,w}]/;{x,y,z,w}!={1,2,3,4}
-
-
-DiagonalBasisList={\[CurlyEpsilon][],\[CurlyEpsilon][1],\[CurlyEpsilon][2],\[CurlyEpsilon][3],\[CurlyEpsilon][4],
-\[CurlyEpsilon][2,3],\[CurlyEpsilon][3,1],\[CurlyEpsilon][1,2],\[CurlyEpsilon][4,1],\[CurlyEpsilon][4,2],\[CurlyEpsilon][4,3],
-\[CurlyEpsilon][3,2,1],\[CurlyEpsilon][4,2,3],\[CurlyEpsilon][4,3,1],\[CurlyEpsilon][4,1,2],\[CurlyEpsilon][1,2,3,4]};
-
-
-DiagonalBasisMap={\[CurlyEpsilon][],\[CurlyEpsilon][1],\[CurlyEpsilon][2],(\[CurlyEpsilon][3]-\[CurlyEpsilon][4])/2,\[CurlyEpsilon][3]+\[CurlyEpsilon][4],
-(\[CurlyEpsilon][2,3]-\[CurlyEpsilon][2,4])/2,(\[CurlyEpsilon][3,1]-\[CurlyEpsilon][4,1])/2,\[CurlyEpsilon][1,2],\[CurlyEpsilon][3,1]+\[CurlyEpsilon][4,1],\[CurlyEpsilon][3,2]+\[CurlyEpsilon][4,2],\[CurlyEpsilon][4,3],
-(\[CurlyEpsilon][3,2,1]-\[CurlyEpsilon][4,2,1])/2,\[CurlyEpsilon][4,2,3],\[CurlyEpsilon][4,3,1],\[CurlyEpsilon][3,1,2]+\[CurlyEpsilon][4,1,2],\[CurlyEpsilon][1,2,3,4]};
-
-
-GeometricBasisMap={e[],e[1],e[2],e[4]/2+e[3],e[4]/2-e[3],
-e[2,4]/2+e[2,3],e[4,1]/2+e[3,1],e[1,2],e[4,1]/2-e[3,1],e[4,2]/2-e[3,2],e[4,3],
-e[4,2,1]/2+e[3,2,1],e[4,2,3],e[4,3,1],e[4,1,2]/2-e[3,1,2],e[1,2,3,4]};
-
-
-ToDiagonalBasis[x_]:=x/.Table[BasisList[[a]]->DiagonalBasisMap[[a]],{a,1,16}]
-
-
-ToGeometricBasis[x_]:=x/.Table[DiagonalBasisList[[a]]->GeometricBasisMap[[a]],{a,1,16}]
-
-
-GeoProduct[\[CurlyEpsilon][1],\[CurlyEpsilon][1,2,3,4]]=\[CurlyEpsilon][4,2,3];
-GeoProduct[\[CurlyEpsilon][2],\[CurlyEpsilon][1,2,3,4]]=\[CurlyEpsilon][4,3,1];
-GeoProduct[\[CurlyEpsilon][3],\[CurlyEpsilon][1,2,3,4]]=-\[CurlyEpsilon][4,1,2];
-GeoProduct[\[CurlyEpsilon][4],\[CurlyEpsilon][1,2,3,4]]=\[CurlyEpsilon][3,2,1];
-
-
-GeoProduct[\[CurlyEpsilon][2,3],\[CurlyEpsilon][1,2,3,4]]=-\[CurlyEpsilon][4,1]; GeoProduct[\[CurlyEpsilon][3,1],\[CurlyEpsilon][1,2,3,4]]=-\[CurlyEpsilon][4,2]; GeoProduct[\[CurlyEpsilon][1,2],\[CurlyEpsilon][1,2,3,4]]=\[CurlyEpsilon][4,3];
-
-
-GeoProduct[\[CurlyEpsilon][4,1],\[CurlyEpsilon][1,2,3,4]]=\[CurlyEpsilon][2,3]; GeoProduct[\[CurlyEpsilon][4,2],\[CurlyEpsilon][1,2,3,4]]=\[CurlyEpsilon][3,1]; GeoProduct[\[CurlyEpsilon][4,3],\[CurlyEpsilon][1,2,3,4]]=-\[CurlyEpsilon][1,2];
-
-
-GeoProduct[\[CurlyEpsilon][4,2,3],\[CurlyEpsilon][1,2,3,4]]=-\[CurlyEpsilon][1]; GeoProduct[\[CurlyEpsilon][4,3,1],\[CurlyEpsilon][1,2,3,4]]=-\[CurlyEpsilon][2]; GeoProduct[\[CurlyEpsilon][4,1,2],\[CurlyEpsilon][1,2,3,4]]=\[CurlyEpsilon][3]; GeoProduct[\[CurlyEpsilon][3,2,1],\[CurlyEpsilon][1,2,3,4]]=-\[CurlyEpsilon][4];
-
-
-Table[GeoProduct[\[CurlyEpsilon][1,2,3,4],\[CurlyEpsilon][x]]=GeoProduct[\[CurlyEpsilon][1],\[CurlyEpsilon][2,3,4,x]],{x,1,4}];
-
-
-Table[GeoProduct[\[CurlyEpsilon][1,2,3,4],\[CurlyEpsilon][x,y]]=GeoProduct[\[CurlyEpsilon][1,2],\[CurlyEpsilon][3,4,x,y]],{x,1,4},{y,1,4}];
-
-
-GeoProduct[\[CurlyEpsilon][1,2,3,4],\[CurlyEpsilon][x_,y_,z_]]:=GeoProduct[\[CurlyEpsilon][1,2,3],\[CurlyEpsilon][4,x,y,z]]
-
-
-GeoProduct[\[CurlyEpsilon][],\[CurlyEpsilon][]]=\[CurlyEpsilon][]; GeoProduct[\[CurlyEpsilon][1,2,3,4],\[CurlyEpsilon][1,2,3,4]]=-\[CurlyEpsilon][];
-
-
-Table[GeoProduct[\[CurlyEpsilon][],\[CurlyEpsilon][x]]=\[CurlyEpsilon][x],{x,1,4}];
-
-
-Table[GeoProduct[\[CurlyEpsilon][],\[CurlyEpsilon][x,y]]=\[CurlyEpsilon][x,y],{x,1,4},{y,1,4}];
-
-
-GeoProduct[\[CurlyEpsilon][],\[CurlyEpsilon][x_,y_,z_]]:=\[CurlyEpsilon][x,y,z]
-
-
-GeoProduct[\[CurlyEpsilon][],\[CurlyEpsilon][x_,y_,z_,w_]]:=\[CurlyEpsilon][x,y,z,w]
-
-
-Table[GeoProduct[\[CurlyEpsilon][x],\[CurlyEpsilon][]]=\[CurlyEpsilon][x],{x,1,4}];
-
-
-Table[GeoProduct[\[CurlyEpsilon][x,y],\[CurlyEpsilon][]]=\[CurlyEpsilon][x,y],{x,1,4},{y,1,4}];
-
-
-GeoProduct[\[CurlyEpsilon][x_,y_,z_],\[CurlyEpsilon][]]:=\[CurlyEpsilon][x,y,z]
-
-
-GeoProduct[\[CurlyEpsilon][x_,y_,z_,w_],\[CurlyEpsilon][]]:=\[CurlyEpsilon][x,y,z,w]
-
-
-Table[GeoProduct[\[CurlyEpsilon][x],\[CurlyEpsilon][y]]=\[CurlyEpsilon][x,y],{x,1,4},{y,1,4}];
-
-
-GeoProduct[\[CurlyEpsilon][x_],\[CurlyEpsilon][y_,z_]]:=\[CurlyEpsilon][x,y,z]
-
-
-GeoProduct[\[CurlyEpsilon][x_,y_],\[CurlyEpsilon][z_]]:=\[CurlyEpsilon][x,y,z]
-
-
-GeoProduct[\[CurlyEpsilon][x_,y_],\[CurlyEpsilon][z_,w_]]:=\[CurlyEpsilon][x,y,z,w]
-
-
-GeoProduct[\[CurlyEpsilon][x_],\[CurlyEpsilon][y_,z_,w_]]:=\[CurlyEpsilon][x,y,z,w]
-
-
-GeoProduct[\[CurlyEpsilon][x_,y_,z_],\[CurlyEpsilon][w_]]:=\[CurlyEpsilon][x,y,z,w]
-
-
-GeoProduct[\[CurlyEpsilon][x_,y_],\[CurlyEpsilon][s_,t_,p_]]:=GeoProduct[\[CurlyEpsilon][x],\[CurlyEpsilon][y,s,t,p]]
-
-
-GeoProduct[\[CurlyEpsilon][x_,y_,z_],\[CurlyEpsilon][s_,t_]]:=GeoProduct[\[CurlyEpsilon][x],\[CurlyEpsilon][y,z,s,t]]
-
-
-GeoProduct[\[CurlyEpsilon][x_,y_,z_],\[CurlyEpsilon][s_,t_,p_]]:=GeoProduct[\[CurlyEpsilon][x,y],\[CurlyEpsilon][z,s,t,p]]
-
-
-GeoProduct[x_,y_]:=x y/;FreeQ[Hold[x],\[CurlyEpsilon]]; GeoProduct[x_,y_]:=x y/;FreeQ[Hold[x],\[CurlyEpsilon]]; GeoProduct[x_,y_]:=y x/;FreeQ[Hold[y],\[CurlyEpsilon]]
-
-
-GeoProduct[x_ y_,z_]:=x GeoProduct[y,z]/;FreeQ[Hold[x],\[CurlyEpsilon]]; GeoProduct[x_,y_ z_]:=y GeoProduct[x,z]/;FreeQ[Hold[y],\[CurlyEpsilon]]
-
-
-GeoProduct[x_ y_,z_ w_]:=x z GeoProduct[y,w]/;FreeQ[Hold[x],\[CurlyEpsilon]]&&FreeQ[Hold[z],\[CurlyEpsilon]]
-
-
-GeoProduct[x_,y_Plus]:=Distribute[temp[x,y]]/.temp->GeoProduct
-
-
-GeoProduct[x_Plus,y_]:=Distribute[temp[x,y]]/.temp->GeoProduct
-
-
-GeometricProduct[x_,y_]:=ToGeometricBasis[GeoProduct[ToDiagonalBasis[x],ToDiagonalBasis[y]]]
+GeometricProduct[x_,y_]:=WedgeProduct[x,y]+TranswedgeProduct[x,y,1]-TranswedgeProduct[x,y,2]-TranswedgeProduct[x,y,3]+TranswedgeProduct[x,y,4]
 
 
 GeometricAntiproduct[x_,y_]:=LeftComp[GeometricProduct[RightComp[x],RightComp[y]]]
