@@ -1010,7 +1010,7 @@ Cell[BoxData[
   RowBox[{"Simplify", "[", 
    RowBox[{
     RowBox[{"R", "\[Antigeometric]", "p", "\[Antigeometric]", 
-     RowBox[{"Rev", "[", "R", "]"}]}], ",", 
+     RowBox[{"Antirev", "[", "R", "]"}]}], ",", 
     RowBox[{"{", 
      RowBox[{
       RowBox[{
